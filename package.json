@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "files": [
     "dist",
-    "games"
+    "assets",
+    "images"
   ],
   "module": "./dist/games-couples-run.js",
   "main": "./dist/games-couples-run.umd.cjs",
@@ -22,6 +23,7 @@
   "scripts": {
     "start:dev": "vite dev --port 3000",
     "build": "vite build",
+    "build:assets": "npx build-game-audio && npx build-game-assets",
     "lint": "tsc && eslint ./src",
     "lint:fix": "tsc && eslint ./src --fix",
     "prettier:format": "prettier --write .",
