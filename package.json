@@ -1,11 +1,10 @@
 {
   "name": "@printezisn/games-couples-run",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "files": [
     "dist",
-    "assets",
-    "images"
+    "tools"
   ],
   "module": "./dist/games-couples-run.js",
   "main": "./dist/games-couples-run.umd.cjs",
@@ -27,7 +26,8 @@
     "lint": "tsc && eslint ./src",
     "lint:fix": "tsc && eslint ./src --fix",
     "prettier:format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "node ./tools/postinstall"
   },
   "dependencies": {
     "husky": "9.1.6"
