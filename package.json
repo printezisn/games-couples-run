@@ -3,7 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "files": [
-    "dist"
+    "dist",
+    "games"
   ],
   "module": "./dist/games-couples-run.js",
   "main": "./dist/games-couples-run.umd.cjs",
@@ -19,6 +20,7 @@
     "node": ">=20"
   },
   "scripts": {
+    "start:dev": "vite dev --port 3000",
     "build": "vite build",
     "lint": "tsc && eslint ./src",
     "lint:fix": "tsc && eslint ./src --fix",
