@@ -1,0 +1,5 @@
+pnpm prettier:format
+pnpm lint
+pnpm build
+git update-index --again
+git add ./dist
