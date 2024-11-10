@@ -23,6 +23,7 @@ Join forces with your partner in the ultimate couples' platformer game! Collect 
 
 ## Scripts
 
+1. `pnpm start:dev`: starts the game in development mode.
 1. `pnpm build`: builds the game and makes it ready to be consumed by web applications.
 1. `pnpm lint`: uses eslint to find linting issues.
 1. `pnpm lint:fix`: uses eslint to find linting issues and fix them if possible.

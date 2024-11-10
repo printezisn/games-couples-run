@@ -17,9 +17,15 @@ importers:
       '@eslint/js':
         specifier: 9.14.0
         version: 9.14.0
+      '@fontsource/lobster':
+        specifier: 5.1.0
+        version: 5.1.0
+      '@fontsource/press-start-2p':
+        specifier: 5.1.0
+        version: 5.1.0
       '@printezisn/game-engine':
-        specifier: file:../../game-engine
-        version: file:../../game-engine
+        specifier: git://github.com/printezisn/game-engine#v0.3.0
+        version: https://codeload.github.com/printezisn/game-engine/tar.gz/0df85b88cc1e3afd1d759c4bc0249c71d607075b
       audiosprite:
         specifier: 0.7.2
         version: 0.7.2
@@ -441,6 +447,18 @@ packages:
       }
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/lobster@5.1.0':
+    resolution:
+      {
+        integrity: sha512-kEIt+NiswgZoA7loqiIXZKpO336yZjvvy3gvBj/hLYGPrZajDDGTr4bKEfsa7NmeD3cXYIO4FDiC5GfB0ONyQw==,
+      }
+
+  '@fontsource/press-start-2p@5.1.0':
+    resolution:
+      {
+        integrity: sha512-l2HeeeNdaO9NJZnW+fKz/aq3rbCTac71LY0mXVhy55h2x5RueN+AWRf5AtC9puD1m5fInvwipKQLvpXj0p47Tg==,
+      }
 
   '@gpu-tex-enc/astc@4.7.1':
     resolution:
@@ -1217,8 +1235,12 @@ packages:
       }
     engines: { node: '>=14' }
 
-  '@printezisn/game-engine@file:../../game-engine':
-    resolution: { directory: ../../game-engine, type: directory }
+  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/0df85b88cc1e3afd1d759c4bc0249c71d607075b':
+    resolution:
+      {
+        tarball: https://codeload.github.com/printezisn/game-engine/tar.gz/0df85b88cc1e3afd1d759c4bc0249c71d607075b,
+      }
+    version: 0.3.0
     engines: { node: '>=20' }
     hasBin: true
 
@@ -4783,6 +4805,10 @@ snapshots:
   '@ffmpeg-installer/win32-x64@4.1.0':
     optional: true
 
+  '@fontsource/lobster@5.1.0': {}
+
+  '@fontsource/press-start-2p@5.1.0': {}
+
   '@gpu-tex-enc/astc@4.7.1':
     optionalDependencies:
       cpu-features: 0.0.10
@@ -5287,7 +5313,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@printezisn/game-engine@file:../../game-engine':
+  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/0df85b88cc1e3afd1d759c4bc0249c71d607075b':
     dependencies:
       husky: 9.1.6
 
