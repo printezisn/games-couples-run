@@ -1,7 +1,7 @@
 {
   "name": "@printezisn/games-couples-run",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "files": [
     "dist",
     "tools"
@@ -19,6 +19,9 @@
   "engines": {
     "node": ">=20"
   },
+  "bin": {
+    "prepare-couples-run-assets": "./bin/prepare-assets.js"
+  },
   "scripts": {
     "start:dev": "vite dev --port 3000",
     "build": "vite build",
@@ -26,8 +29,7 @@
     "lint": "tsc && eslint ./src",
     "lint:fix": "tsc && eslint ./src --fix",
     "prettier:format": "prettier --write .",
-    "prepare": "husky",
-    "postinstall": "node ./tools/postinstall"
+    "prepare": "husky"
   },
   "dependencies": {
     "husky": "9.1.6"
