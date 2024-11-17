@@ -25,34 +25,34 @@ class MovingPlatform extends ContainerComponent {
       }),
     );
 
-    this.onResize();
+    this._onResize();
   }
 
-  protected get platformTop() {
+  protected get _platformTop() {
     return this.components[0] as TilingSpriteComponent;
   }
 
-  protected get platformMiddle() {
+  protected get _platformMiddle() {
     return this.components[1] as TilingSpriteComponent;
   }
 
-  protected onResize() {
-    this.platformMiddle.width = engineGameState.screen.width;
-    this.platformMiddle.height =
-      this.platformMiddle.originalHeight * TOTAL_MIDDLE_PLATFORMS;
-    this.platformMiddle.position.y =
-      engineGameState.screen.height - this.platformMiddle.height;
+  protected _onResize() {
+    this._platformMiddle.width = engineGameState.screen.width;
+    this._platformMiddle.height =
+      this._platformMiddle.originalHeight * TOTAL_MIDDLE_PLATFORMS;
+    this._platformMiddle.position.y =
+      engineGameState.screen.height - this._platformMiddle.height;
 
-    this.platformTop.width = engineGameState.screen.width;
-    this.platformTop.position.y =
+    this._platformTop.width = engineGameState.screen.width;
+    this._platformTop.position.y =
       engineGameState.screen.height -
-      this.platformMiddle.height -
-      this.platformTop.height;
+      this._platformMiddle.height -
+      this._platformTop.height;
   }
 
-  protected onTick() {
-    this.platformTop.tilePosition.x--;
-    this.platformMiddle.tilePosition.x--;
+  protected _onTick() {
+    this._platformTop.tilePosition.x--;
+    this._platformMiddle.tilePosition.x--;
   }
 }
 

@@ -1,5 +1,5 @@
-import { D as p, d as Z, P as v, s as ct, b as pt, w as he, I as F, W as Re, c as V, V as U, S as ft, e as ee, g as Ue, H as B, $ as te, f as G, h as C, i as _, j as gt, l as re, U as mt, m as xt, n as _t, o as N, p as q, q as z, z as k, r as J, t as bt, u as P, v as ce, C as $, Y as Pe, x as yt, y as ie, A as Me, B as Ae, E as vt, F as Tt, G as St, R as ke, J as wt, K as Ct, L as Fe, N as Bt, O as He, Q as pe, T as fe, X as Q, Z as D, _ as Rt, a0 as Ut, a1 as Pt } from "./index-B3pNpNGW.js";
-import { k as w, w as E, v as I, U as Ge, m as Mt, O as At } from "./colorToUniform-D3h9cD5N-DXjEhKQ0.js";
+import { D as p, U as Z, A as v, i as ct, l as pt, b as he, E as F, z as Re, c as V, V as U, S as ft, f as ee, m as Ue, H as B, $ as te, r as G, I as C, w as _, t as gt, Z as re, C as mt, a as xt, X as _t, s as N, Y as q, x as z, d as k, e as J, g as bt, h as P, y as ce, j as L, o as Pe, p as yt, K as ie, q as Me, u as Ae, v as vt, B as Tt, F as St, G as ke, J as wt, L as Ct, N as Fe, O as Bt, P as He, Q as pe, R as fe, T as Q, W as D, _ as Rt, a0 as Ut, a1 as Pt } from "./index-CHufY7e4.js";
+import { k as w, w as E, v as $, U as Ge, m as Mt, O as At } from "./colorToUniform-NJuNsmcn-umSN0eeF.js";
 class ze {
   /**
    * Initialize the plugin with scope of application instance
@@ -139,7 +139,7 @@ function Oe(s, e) {
     return;
   const t = !!s.effects.length;
   let r = e;
-  if ((s.renderGroup || t) && (r = $.get().clear()), s.boundsArea)
+  if ((s.renderGroup || t) && (r = L.get().clear()), s.boundsArea)
     e.addRect(s.boundsArea, s.worldTransform);
   else {
     if (s.renderPipeId) {
@@ -160,8 +160,8 @@ function Oe(s, e) {
     let i = !1;
     for (let a = 0; a < s.effects.length; a++)
       s.effects[a].addBounds && (i || (i = !0, r.applyMatrix(s.parentRenderGroup.worldTransform)), s.effects[a].addBounds(r, !0));
-    i && (r.applyMatrix(s.parentRenderGroup.worldTransform.copyTo(kt).invert()), e.addBounds(r, s.relativeGroupTransform)), e.addBounds(r), $.return(r);
-  } else s.renderGroup && (e.addBounds(r, s.relativeGroupTransform), $.return(r));
+    i && (r.applyMatrix(s.parentRenderGroup.worldTransform.copyTo(kt).invert()), e.addBounds(r, s.relativeGroupTransform)), e.addBounds(r), L.return(r);
+  } else s.renderGroup && (e.addBounds(r, s.relativeGroupTransform), L.return(r));
 }
 function Ht(s, e) {
   e.clear();
@@ -376,14 +376,14 @@ Ve.extension = {
   ],
   name: "filter"
 };
-const Ee = class Ie extends Z {
+const Ee = class $e extends Z {
   constructor(...e) {
     let t = e[0] ?? {};
     t instanceof Float32Array && (te(Pe, "use new MeshGeometry({ positions, uvs, indices }) instead"), t = {
       positions: t,
       uvs: e[1],
       indices: e[2]
-    }), t = { ...Ie.defaultOptions, ...t };
+    }), t = { ...$e.defaultOptions, ...t };
     const r = t.positions || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]), i = t.uvs || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]), a = t.indices || new Uint32Array([0, 1, 2, 0, 2, 3]), n = t.shrinkBuffersToFit, o = new G({
       data: r,
       label: "attribute-mesh-positions",
@@ -463,17 +463,17 @@ function zt(s) {
       `word-wrap: ${s.breakWords ? "break-all" : "break-word"}`,
       `max-width: ${s.wordWrapWidth}px`
     ] : [],
-    ...e ? [$e(e)] : [],
-    ...s.dropShadow ? [Le(s.dropShadow)] : [],
+    ...e ? [Le(e)] : [],
+    ...s.dropShadow ? [Ie(s.dropShadow)] : [],
     ...s.cssOverrides
   ].join(";")} }`];
   return Dt(s.tagStyles, r), r.join(" ");
 }
-function Le(s) {
+function Ie(s) {
   const e = P.shared.setValue(s.color).setAlpha(s.alpha).toHexa(), t = Math.round(Math.cos(s.angle) * s.distance), r = Math.round(Math.sin(s.angle) * s.distance), i = `${t}px ${r}px`;
   return s.blur > 0 ? `text-shadow: ${i} ${s.blur}px ${e}` : `text-shadow: ${i} ${e}`;
 }
-function $e(s) {
+function Le(s) {
   return [
     `-webkit-text-stroke-width: ${s.width}px`,
     `-webkit-text-stroke-color: ${P.shared.setValue(s.color).toHex()}`,
@@ -497,8 +497,8 @@ const ge = {
 }, me = {
   fill: (s) => `color: ${P.shared.setValue(s).toHex()}`,
   breakWords: (s) => `word-wrap: ${s ? "break-all" : "break-word"}`,
-  stroke: $e,
-  dropShadow: Le
+  stroke: Le,
+  dropShadow: Ie
 };
 function Dt(s, e) {
   for (const t in s) {
@@ -636,7 +636,7 @@ class Xe {
     const i = r.customShader || this._adaptor.shader;
     this.state.blendMode = e.groupBlendMode;
     const a = i.resources.localUniforms.uniforms;
-    a.uTransformMatrix = e.groupTransform, a.uRound = t._roundPixels | e._roundPixels, I(
+    a.uTransformMatrix = e.groupTransform, a.uRound = t._roundPixels | e._roundPixels, $(
       e.groupColorAlpha,
       a.uColor,
       0
@@ -810,7 +810,7 @@ class Ne {
       return;
     e.state.blendMode = re(e.groupBlendMode, e.texture._source);
     const t = this.localUniforms;
-    t.uniforms.uTransformMatrix = e.groupTransform, t.uniforms.uRound = this.renderer._roundPixels | e._roundPixels, t.update(), I(
+    t.uniforms.uTransformMatrix = e.groupTransform, t.uniforms.uRound = this.renderer._roundPixels | e._roundPixels, t.update(), $(
       e.groupColorAlpha,
       t.uniforms.uColor,
       0
@@ -879,7 +879,7 @@ function ye(s, e = null) {
     e[r + 0] = i + 0, e[r + 1] = i + 1, e[r + 2] = i + 2, e[r + 3] = i + 0, e[r + 4] = i + 2, e[r + 5] = i + 3;
   return e;
 }
-function It(s) {
+function $t(s) {
   return {
     dynamicUpdate: ve(s, !0),
     staticUpdate: ve(s, !1)
@@ -915,7 +915,7 @@ function ve(s, e) {
 `);
   return new Function("ps", "f32v", "u32v", i);
 }
-class Lt {
+class It {
   constructor(e) {
     this._size = 0, this._generateParticleUpdateCache = {};
     const t = this._size = e.size ?? 1e3, r = e.properties;
@@ -957,11 +957,11 @@ class Lt {
     this._dynamicUpload = h.dynamicUpdate, this._staticUpload = h.staticUpdate, this.geometry = n;
   }
   getParticleUpdate(e) {
-    const t = $t(e);
+    const t = Lt(e);
     return this._generateParticleUpdateCache[t] ? this._generateParticleUpdateCache[t] : (this._generateParticleUpdateCache[t] = this.generateParticleUpdate(e), this._generateParticleUpdateCache[t]);
   }
   generateParticleUpdate(e) {
-    return It(e);
+    return $t(e);
   }
   update(e, t) {
     e.length > this._size && (t = !0, this._size = Math.max(e.length, this._size * 1.5 | 0), this.staticAttributeBuffer = new D(this._size * this._staticStride * 4 * 4), this.dynamicAttributeBuffer = new D(this._size * this._dynamicStride * 4 * 4), this.indexBuffer = ye(this._size), this.geometry.indexBuffer.setDataWithSize(
@@ -987,7 +987,7 @@ class Lt {
     this._staticBuffer.destroy(), this._dynamicBuffer.destroy(), this.geometry.destroy();
   }
 }
-function $t(s) {
+function Lt(s) {
   const e = [];
   for (const t in s) {
     const r = s[t];
@@ -1150,7 +1150,7 @@ class qe {
     return this._gpuBufferHash[e.uid] || this._initBuffer(e);
   }
   _initBuffer(e) {
-    return this._gpuBufferHash[e.uid] = new Lt({
+    return this._gpuBufferHash[e.uid] = new It({
       size: e.particleChildren.length,
       properties: e._properties
     }), e.on("destroyed", this._destroyRenderableBound), this._gpuBufferHash[e.uid];
@@ -1169,7 +1169,7 @@ class qe {
     const a = this.state;
     i.update(t, e._childrenDirty), e._childrenDirty = !1, a.blendMode = re(e.blendMode, e.texture._source);
     const n = this.localUniforms.uniforms, o = n.uTranslationMatrix;
-    e.worldTransform.copyTo(o), o.prepend(r.globalUniforms.globalUniformData.projectionMatrix), n.uResolution = r.globalUniforms.globalUniformData.resolution, n.uRound = r._roundPixels | e._roundPixels, I(
+    e.worldTransform.copyTo(o), o.prepend(r.globalUniforms.globalUniformData.projectionMatrix), n.uResolution = r.globalUniforms.globalUniformData.resolution, n.uRound = r._roundPixels | e._roundPixels, $(
       e.groupColorAlpha,
       n.uColor,
       0
@@ -1515,7 +1515,7 @@ class rt {
     const { shader: t } = this._tilingSpriteDataHash[e.uid];
     t.groups[0] = this._renderer.globalUniforms.bindGroup;
     const r = t.resources.localUniforms.uniforms;
-    r.uTransformMatrix = e.groupTransform, r.uRound = this._renderer._roundPixels | e._roundPixels, I(
+    r.uTransformMatrix = e.groupTransform, r.uRound = this._renderer._roundPixels | e._roundPixels, $(
       e.groupColorAlpha,
       r.uColor,
       0
@@ -2293,7 +2293,7 @@ class ot {
     let y, M;
     const H = t.dropShadow ? 2 : 1;
     for (let S = 0; S < H; ++S) {
-      const A = t.dropShadow && S === 0, L = A ? Math.ceil(Math.max(1, R) + t.padding * 2) : 0, dt = L * r;
+      const A = t.dropShadow && S === 0, I = A ? Math.ceil(Math.max(1, R) + t.padding * 2) : 0, dt = I * r;
       if (A) {
         u.fillStyle = "black", u.strokeStyle = "black";
         const T = t.dropShadow, ut = T.color, lt = T.alpha;
@@ -2311,14 +2311,14 @@ class ot {
           t,
           i,
           y + t.padding,
-          M + t.padding - L,
+          M + t.padding - I,
           !0
         ), t._fill !== void 0 && this._drawLetterSpacing(
           f[T],
           t,
           i,
           y + t.padding,
-          M + t.padding - L
+          M + t.padding - I
         );
     }
   }

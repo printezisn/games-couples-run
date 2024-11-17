@@ -38,8 +38,8 @@ abstract class Character extends SpriteComponent {
   private _canDamage = true;
 
   abstract get hasPressAndRelease(): boolean;
-  protected abstract get totalAllowedJumps(): number;
-  protected abstract get increaseSpeedMilestone(): number;
+  protected abstract get _totalAllowedJumps(): number;
+  protected abstract get _increaseSpeedMilestone(): number;
 
   constructor(resourceType: ResourceType) {
     super({
@@ -72,7 +72,7 @@ abstract class Character extends SpriteComponent {
     if (!this._canJump()) return;
 
     this._currentJump++;
-    this.changeState('jump');
+    this._changeState('jump');
   }
 
   press() {
@@ -90,7 +90,7 @@ abstract class Character extends SpriteComponent {
     this._pressing = false;
     this._pressed = true;
     this._currentJump++;
-    this.changeState('jump');
+    this._changeState('jump');
   }
 
   async damage() {
@@ -115,10 +115,10 @@ abstract class Character extends SpriteComponent {
     this._canDamage = true;
   }
 
-  protected onTick() {
+  protected _onTick() {
     if (!gameState.started) return;
     if (this._moveState === 'idle') {
-      this.changeState('run');
+      this._changeState('run');
     }
 
     this._moveFrame++;
@@ -132,7 +132,7 @@ abstract class Character extends SpriteComponent {
     }
   }
 
-  protected changeState(state: MoveState) {
+  protected _changeState(state: MoveState) {
     this._moveState = state;
     this._moveFrame = 0;
     this._moveSprite = 0;
@@ -160,14 +160,14 @@ abstract class Character extends SpriteComponent {
     if (onGround && this._moveState !== 'run' && gameState.started) {
       this._pressed = false;
       this._currentJump = 0;
-      this.changeState('run');
+      this._changeState('run');
     }
 
     if (this._canIncreaseSpeed()) {
       if (this._nextIncreaseSpeedMilestone > 0) {
         gameState.speed++;
       }
-      this._nextIncreaseSpeedMilestone = this.x + this.increaseSpeedMilestone;
+      this._nextIncreaseSpeedMilestone = this.x + this._increaseSpeedMilestone;
     }
   }
 
@@ -179,7 +179,7 @@ abstract class Character extends SpriteComponent {
     if (!gameState.started) return false;
     if (
       this._moveState === 'jump' &&
-      this._currentJump < this.totalAllowedJumps
+      this._currentJump < this._totalAllowedJumps
     ) {
       return true;
     }

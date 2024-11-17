@@ -16,7 +16,7 @@ class Logo extends TextComponent {
       horizontalAlignment: 'center',
     });
 
-    this.fontSize = this.desiredFontSize;
+    this.fontSize = this._desiredFontSize;
     this.animate({
       duration: 1,
       from: { alpha: 0, y: 0 },
@@ -25,13 +25,13 @@ class Logo extends TextComponent {
     });
   }
 
-  private get desiredFontSize() {
+  private get _desiredFontSize() {
     return engineGameState.screen.orientation === 'landscape' ? 128 : 86;
   }
 
-  protected onOrientationChange() {
+  protected _onOrientationChange() {
     this.stopAnimations();
-    this.fontSize = this.desiredFontSize;
+    this.fontSize = this._desiredFontSize;
     this.y = 50;
   }
 }

@@ -42,10 +42,10 @@ class Zombie extends SpriteComponent {
       onCollision: this._onCollision.bind(this),
     });
 
-    this.registerToSignal(config.signals.moveScreen, this._onMoveScreen);
+    this._registerToSignal(config.signals.moveScreen, this._onMoveScreen);
   }
 
-  protected onTick() {
+  protected _onTick() {
     if (!this._started || !gameState.started) return;
 
     if (this.x + this.width >= 0) {
@@ -84,7 +84,7 @@ class Zombie extends SpriteComponent {
           velocity: { x: -1, y: 0 },
         },
       });
-      this.unregisterFromSignal(config.signals.moveScreen);
+      this._unregisterFromSignal(config.signals.moveScreen);
     }
   }
 }

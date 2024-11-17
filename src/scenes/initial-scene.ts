@@ -45,7 +45,7 @@ class InitialScene extends BaseScene {
     });
   }
 
-  protected async onClick() {
+  protected async _onClick() {
     if (!this._canContinue) return;
 
     this.interactive = false;

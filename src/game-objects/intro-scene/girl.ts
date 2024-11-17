@@ -13,13 +13,13 @@ class Girl extends SpriteComponent {
       cursor: 'pointer',
     });
 
-    this.registerToSignal(
+    this._registerToSignal(
       config.signals.chooseCharacter,
       this._onCharacterSelection,
     );
   }
 
-  protected onClick() {
+  protected _onClick() {
     this.interactive = false;
     gameState.selectedCharacter = 'girl';
     fireSignal(config.signals.chooseCharacter);

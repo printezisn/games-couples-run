@@ -19,7 +19,7 @@ class MovingBoy extends SpriteComponent {
     });
   }
 
-  protected onTick() {
+  protected _onTick() {
     this._moveFrame++;
     if (this._moveFrame % MOVE_FRAME_INTERVAL === 0) {
       this._moveFrame = 0;

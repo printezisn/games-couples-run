@@ -1,6 +1,6 @@
-import { D as l, P as G, a2 as ne, e as oe, a3 as w, a4 as ae, O as B, a5 as S, h as P, f as ue, W as E, a6 as v, c as R, I as H, q as M, H as z, A as F, F as de, G as ce, E as he, R as A, y as O, V as U, a7 as b, a8 as le, a9 as pe } from "./index-B3pNpNGW.js";
-import { w as k, F as fe, m as ge } from "./colorToUniform-D3h9cD5N-DXjEhKQ0.js";
-import { j as me, N as _e, H as be, V as xe, x as ye, F as Ge, W as Pe, D as Be, L as Se, z as Te } from "./SharedSystems-BfbKkSV2-DP8gxSTR.js";
+import { D as l, A as G, a2 as ne, f as oe, a3 as w, a4 as ae, P as B, a5 as S, I as P, r as ue, z as E, a6 as v, c as R, E as H, x as M, H as z, q as F, B as de, F as ce, v as he, G as A, K as O, V as U, a7 as b, a8 as le, a9 as pe } from "./index-CHufY7e4.js";
+import { w as k, F as fe, m as ge } from "./colorToUniform-NJuNsmcn-umSN0eeF.js";
+import { j as me, N as _e, H as be, V as xe, x as ye, F as Ge, W as Pe, D as Be, L as Se, z as Te } from "./SharedSystems-mrBsPRt9-CWuzssxZ.js";
 const x = k.for2d();
 class L {
   start(e, t, r) {
@@ -608,7 +608,7 @@ function Ee(a, e, t, r, s) {
 function Re(a, e, t, r) {
   return t << 6 | a << 3 | r << 1 | e;
 }
-class $ {
+class q {
   constructor(e) {
     this._moduleCache = /* @__PURE__ */ Object.create(null), this._bufferLayoutsCache = /* @__PURE__ */ Object.create(null), this._bindingNamesCache = /* @__PURE__ */ Object.create(null), this._pipeCache = /* @__PURE__ */ Object.create(null), this._pipeStateCaches = /* @__PURE__ */ Object.create(null), this._colorMask = 15, this._multisampleCount = 1, this._renderer = e;
   }
@@ -764,7 +764,7 @@ class $ {
     this._renderer = null, this._bufferLayoutsCache = null;
   }
 }
-$.extension = {
+q.extension = {
   type: [l.WebGPUSystem],
   name: "pipeline"
 };
@@ -918,12 +918,12 @@ class ze {
     });
   }
 }
-class q extends Pe {
+class $ extends Pe {
   constructor(e) {
     super(e), this.adaptor = new ze(), this.adaptor.init(e, this);
   }
 }
-q.extension = {
+$.extension = {
   type: [l.WebGPUSystem],
   name: "renderTarget"
 };
@@ -1148,7 +1148,7 @@ const Fe = {
       }
     );
   }
-}, Z = {
+}, J = {
   "bc1-rgba-unorm": { blockBytes: 8, blockWidth: 4, blockHeight: 4 },
   "bc2-rgba-unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 },
   "bc3-rgba-unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 },
@@ -1160,7 +1160,7 @@ const Fe = {
   type: "compressed",
   upload(a, e, t) {
     let r = a.pixelWidth, s = a.pixelHeight;
-    const i = Z[a.format] || Ae;
+    const i = J[a.format] || Ae;
     for (let n = 0; n < a.resource.length; n++) {
       const o = a.resource[n], u = Math.ceil(r / i.blockWidth) * i.blockBytes;
       t.device.queue.writeTexture(
@@ -1181,7 +1181,7 @@ const Fe = {
       ), r = Math.max(r >> 1, 1), s = Math.max(s >> 1, 1);
     }
   }
-}, J = {
+}, Q = {
   type: "image",
   upload(a, e, t) {
     const r = a.resource;
@@ -1200,7 +1200,7 @@ const Fe = {
 }, ke = {
   type: "video",
   upload(a, e, t) {
-    J.upload(a, e, t);
+    Q.upload(a, e, t);
   }
 };
 class Le {
@@ -1329,10 +1329,10 @@ class Le {
     return this.device.queue.submit([n.finish()]), i || r.destroy(), e;
   }
 }
-class Q {
+class Z {
   constructor(e) {
     this.managedTextures = [], this._gpuSources = /* @__PURE__ */ Object.create(null), this._gpuSamplers = /* @__PURE__ */ Object.create(null), this._bindGroupHash = /* @__PURE__ */ Object.create(null), this._textureViewHash = /* @__PURE__ */ Object.create(null), this._uploads = {
-      image: J,
+      image: Q,
       buffer: Fe,
       video: ke,
       compressed: Oe
@@ -1348,7 +1348,7 @@ class Q {
     }
     let t = GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST;
     e.uploadMethodId !== "compressed" && (t |= GPUTextureUsage.RENDER_ATTACHMENT, t |= GPUTextureUsage.COPY_SRC);
-    const r = Z[e.format] || { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, s = Math.ceil(e.pixelWidth / r.blockWidth) * r.blockWidth, i = Math.ceil(e.pixelHeight / r.blockHeight) * r.blockHeight, n = {
+    const r = J[e.format] || { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, s = Math.ceil(e.pixelWidth / r.blockWidth) * r.blockWidth, i = Math.ceil(e.pixelHeight / r.blockHeight) * r.blockHeight, n = {
       label: e.label,
       size: { width: s, height: i },
       format: e.format,
@@ -1455,7 +1455,7 @@ class Q {
     this._gpu = null, this._mipmapGenerator = null, this._gpuSources = null, this._bindGroupHash = null, this._textureViewHash = null, this._gpuSamplers = null;
   }
 }
-Q.extension = {
+Z.extension = {
   type: [
     l.WebGPUSystem
   ],
@@ -1579,11 +1579,11 @@ const De = [
   V,
   T,
   I,
-  Q,
-  q,
+  Z,
+  $,
   Y,
   X,
-  $,
+  q,
   W,
   N,
   D

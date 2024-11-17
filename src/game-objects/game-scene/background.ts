@@ -8,7 +8,7 @@ class Background extends TilingBackgroundComponent {
       resource: 'city-bg.png',
     });
 
-    this.registerToSignal(config.signals.moveScreen, this._move);
+    this._registerToSignal(config.signals.moveScreen, this._move);
   }
 
   private _move(x: number) {

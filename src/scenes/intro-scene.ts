@@ -30,19 +30,19 @@ const CHARACTER_EXPLANATION =
   'Nikos can perform a double jump if you click/tap on the screen again while jumping.';
 
 class IntroScene extends BaseScene {
-  private get introComponent() {
+  private get _introComponent() {
     return this.components[1] as TextComponent;
   }
 
-  private get characterExplanationComponent() {
+  private get _characterExplanationComponent() {
     return this.components[1] as TextComponent;
   }
 
-  private get chooseCharacterComponent() {
+  private get _chooseCharacterComponent() {
     return this.components[2] as TextComponent;
   }
 
-  private get selectionComponent() {
+  private get _selectionComponent() {
     return this.components[3] as Selection;
   }
 
@@ -88,8 +88,8 @@ class IntroScene extends BaseScene {
         position: {
           x: 0,
           y:
-            this.characterExplanationComponent.y +
-            this.characterExplanationComponent.height +
+            this._characterExplanationComponent.y +
+            this._characterExplanationComponent.height +
             40,
         },
         horizontalAlignment: 'center',
@@ -97,23 +97,23 @@ class IntroScene extends BaseScene {
     );
     this.addComponent(new Selection());
 
-    this.selectionComponent.y =
-      this.chooseCharacterComponent.y +
-      this.chooseCharacterComponent.height +
+    this._selectionComponent.y =
+      this._chooseCharacterComponent.y +
+      this._chooseCharacterComponent.height +
       40;
 
-    this.registerToSignal(
+    this._registerToSignal(
       config.signals.chooseCharacter,
       this._onCharacterSelection,
     );
 
     await Promise.all([
-      this.chooseCharacterComponent.animate({
+      this._chooseCharacterComponent.animate({
         from: { alpha: 0 },
         to: { alpha: 1 },
         duration: 1,
       }),
-      this.selectionComponent.animate({
+      this._selectionComponent.animate({
         from: { alpha: 0 },
         to: { alpha: 1 },
         duration: 1,
@@ -121,20 +121,20 @@ class IntroScene extends BaseScene {
     ]);
   }
 
-  protected onResize() {
-    if (this.introComponent) {
-      this.introComponent.wordWrapWidth = engineGameState.screen.width - 40;
+  protected _onResize() {
+    if (this._introComponent) {
+      this._introComponent.wordWrapWidth = engineGameState.screen.width - 40;
     }
-    if (this.characterExplanationComponent) {
-      this.characterExplanationComponent.wordWrapWidth =
+    if (this._characterExplanationComponent) {
+      this._characterExplanationComponent.wordWrapWidth =
         engineGameState.screen.width - 40;
     }
-    if (this.chooseCharacterComponent) {
-      this.chooseCharacterComponent.y =
-        this.characterExplanationComponent.y +
-        this.characterExplanationComponent.height +
+    if (this._chooseCharacterComponent) {
+      this._chooseCharacterComponent.y =
+        this._characterExplanationComponent.y +
+        this._characterExplanationComponent.height +
         40;
-      this.selectionComponent.y = this.chooseCharacterComponent.y + 40;
+      this._selectionComponent.y = this._chooseCharacterComponent.y + 40;
     }
   }
 
@@ -163,13 +163,13 @@ class IntroScene extends BaseScene {
   }
 
   private async _hideIntro() {
-    await this.introComponent.animate({
+    await this._introComponent.animate({
       from: { alpha: 1 },
       to: { alpha: 0 },
       duration: 3,
     });
 
-    this.introComponent.destroy();
+    this._introComponent.destroy();
   }
 
   private async _onCharacterSelection() {

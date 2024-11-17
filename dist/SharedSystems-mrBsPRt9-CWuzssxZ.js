@@ -1,5 +1,5 @@
-import { D as l, P as O, aa as te, a5 as p, k as C, y as Le, a0 as re, _ as ne, i as b, ab as Ve, e as F, a7 as B, u as ae, c as se, ac as ie, V as m, ad as $e, H as v, S as je, W as Ne, I as oe, w as N, $ as qe, Y as Ke, Q as w, O as ue, ae as Ye, g as de, af as Xe, X as q, ag as Je, f as K, h as T, a8 as U, ah as Qe, a9 as y, M as Ze, ai as S, aj as le, ak as ce, al as he, am as Y, an as et } from "./index-B3pNpNGW.js";
-import { w as pe, k as X, U as tt, v as rt } from "./colorToUniform-D3h9cD5N-DXjEhKQ0.js";
+import { D as d, A as O, aa as te, a5 as p, k as C, K as Le, a0 as re, _ as ne, w as b, ab as Ve, f as F, a7 as B, h as ae, c as se, ac as ie, V as m, ad as $e, H as v, S as je, z as Ne, E as oe, b as N, $ as qe, o as Ke, Q as w, P as ue, ae as Ye, m as le, af as Xe, T as q, ag as Je, r as K, I as T, a8 as U, ah as Qe, a9 as y, M as Ze, ai as S, aj as de, ak as ce, al as he, am as Y, an as et } from "./index-CHufY7e4.js";
+import { w as pe, k as X, U as tt, v as rt } from "./colorToUniform-NJuNsmcn-umSN0eeF.js";
 const fe = class I extends Le {
   /**
    * @param options - The optional parameters of this filter.
@@ -266,7 +266,7 @@ class it extends nt {
     ).prepend(this._textureMatrix.mapCoord), this.resources.uMaskTexture = this.sprite.texture.source, e.applyFilter(this, t, r, a);
   }
 }
-const H = class me {
+const z = class me {
   constructor(e, t) {
     var r, a;
     this.state = pe.for2d(), this._batchersByInstructionSet = /* @__PURE__ */ Object.create(null), this._activeBatches = /* @__PURE__ */ Object.create(null), this.renderer = e, this._adaptor = t, (a = (r = this._adaptor).init) == null || a.call(r, this);
@@ -320,17 +320,17 @@ const H = class me {
     this._activeBatches = null;
   }
 };
-H.extension = {
+z.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "batch"
 };
-H._availableBatchers = /* @__PURE__ */ Object.create(null);
-let ve = H;
-O.handleByMap(l.Batcher, ve._availableBatchers);
+z._availableBatchers = /* @__PURE__ */ Object.create(null);
+let ve = z;
+O.handleByMap(d.Batcher, ve._availableBatchers);
 O.add(te);
 const Ot = {
   name: "texture-bit",
@@ -409,7 +409,7 @@ function ot(n, e) {
   const a = e.renderPipes ? e : e.batch.renderer, s = a.renderPipes;
   s.batch.buildStart(r), s.blendMode.buildStart(), s.colorMask.buildStart(), t.sortableChildren && t.sortChildren(), ge(t, r, a, !0), s.batch.buildEnd(r), s.blendMode.buildEnd(r);
 }
-function P(n, e, t) {
+function G(n, e, t) {
   const r = t.renderPipes ? t : t.batch.renderer;
   n.globalDisplayStatus < 7 || !n.includeInBuild || (n.sortableChildren && n.sortChildren(), n.isSimple ? ut(n, e, r) : ge(n, e, r, !1));
 }
@@ -421,7 +421,7 @@ function ut(n, e, t) {
   if (!n.renderGroup) {
     const r = n.children, a = r.length;
     for (let s = 0; s < a; s++)
-      P(r[s], e, t);
+      G(r[s], e, t);
   }
 }
 function ge(n, e, t, r) {
@@ -429,24 +429,24 @@ function ge(n, e, t, r) {
   if (!r && n.renderGroup)
     a.renderGroup.addRenderGroup(n.renderGroup, e);
   else {
-    for (let d = 0; d < n.effects.length; d++) {
-      const c = n.effects[d];
+    for (let l = 0; l < n.effects.length; l++) {
+      const c = n.effects[l];
       a[c.pipe].push(c, n, e);
     }
     const i = n, o = i.renderPipeId;
     o && (a.blendMode.setBlendMode(i, i.groupBlendMode, e), a[o].addRenderable(i, e), s.addRenderable(i, e), i.didViewUpdate = !1);
     const u = n.children;
     if (u.length)
-      for (let d = 0; d < u.length; d++)
-        P(u[d], e, t);
-    for (let d = n.effects.length - 1; d >= 0; d--) {
-      const c = n.effects[d];
+      for (let l = 0; l < u.length; l++)
+        G(u[l], e, t);
+    for (let l = n.effects.length - 1; l >= 0; l--) {
+      const c = n.effects[l];
       a[c.pipe].pop(c, n, e);
     }
   }
 }
-const dt = new de();
-class lt extends ie {
+const lt = new le();
+class dt extends ie {
   constructor() {
     super(), this.filters = [new it({
       sprite: new Xe(m.EMPTY),
@@ -483,7 +483,7 @@ class xe {
       maskedContainer: t
     }), e.inverse = t._maskOptions.inverse, e.renderMaskToTexture) {
       const s = e.mask;
-      s.includeInBuild = !0, P(
+      s.includeInBuild = !0, G(
         s,
         r,
         a
@@ -510,10 +510,10 @@ class xe {
   execute(e) {
     const t = this._renderer, r = e.mask.renderMaskToTexture;
     if (e.action === "pushMaskBegin") {
-      const a = b.get(lt);
+      const a = b.get(dt);
       if (a.inverse = e.inverse, r) {
         e.mask.mask.measurable = !0;
-        const s = Ve(e.mask.mask, !0, dt);
+        const s = Ve(e.mask.mask, !0, lt);
         e.mask.mask.measurable = !1, s.ceil();
         const i = t.renderTarget.renderTarget.colorTexture.source, o = X.getOptimalTexture(
           s.width,
@@ -557,9 +557,9 @@ class xe {
 }
 xe.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "alphaMask"
 };
@@ -601,9 +601,9 @@ class _e {
 }
 _e.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "colorMask"
 };
@@ -627,7 +627,7 @@ class be {
       instructionsLength: 0
     });
     const u = this._maskHash.get(s);
-    u.instructionsStart = r.instructionSize, P(
+    u.instructionsStart = r.instructionSize, G(
       o,
       r,
       i
@@ -638,8 +638,8 @@ class be {
       inverse: t._maskOptions.inverse,
       canBundle: !1
     });
-    const d = r.instructionSize - u.instructionsStart - 1;
-    u.instructionsLength = d;
+    const l = r.instructionSize - u.instructionsStart - 1;
+    u.instructionsLength = l;
     const c = i.renderTarget.renderTarget.uid;
     (a = this._maskStackHash)[c] ?? (a[c] = 0);
   }
@@ -672,13 +672,13 @@ class be {
 }
 be.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "stencilMask"
 };
-function Ht(n, e) {
+function zt(n, e) {
   for (const t in n.attributes) {
     const r = n.attributes[t], a = e[t];
     a ? (r.format ?? (r.format = a.format), r.offset ?? (r.offset = a.offset), r.instance ?? (r.instance = a.instance)) : se(`Attribute ${t} is not present in the shader, but is present in the geometry. Unable to infer attribute details.`);
@@ -748,7 +748,7 @@ x[p.INVERSE_MASK_ACTIVE] = {
     passOp: "replace"
   }
 };
-class zt {
+class Et {
   constructor(e) {
     this._syncFunctionHash = /* @__PURE__ */ Object.create(null), this._adaptor = e, this._systemCheck();
   }
@@ -912,7 +912,7 @@ const M = [
         `
   }
 ];
-function Dt(n, e, t, r) {
+function Ht(n, e, t, r) {
   const a = [`
         var v = null;
         var v2 = null;
@@ -923,12 +923,12 @@ function Dt(n, e, t, r) {
     `];
   let s = 0;
   for (let o = 0; o < n.length; o++) {
-    const u = n[o], d = u.data.name;
+    const u = n[o], l = u.data.name;
     let c = !1, h = 0;
     for (let f = 0; f < M.length; f++)
       if (M[f].test(u.data)) {
         h = u.offset / 4, a.push(
-          `name = "${d}";`,
+          `name = "${l}";`,
           `offset += ${h - s};`,
           M[f][e] || M[f].ubo
         ), c = !0;
@@ -942,7 +942,7 @@ function Dt(n, e, t, r) {
         h = u.offset / 4, a.push(
           /* wgsl */
           `
-                    v = uv.${d};
+                    v = uv.${l};
                     offset += ${h - s};
                     ${f};
                 `
@@ -1008,7 +1008,7 @@ const ht = {
   "mat4x3<f32>": g(4, 3),
   "mat2x4<f32>": g(2, 4),
   "mat3x4<f32>": g(3, 4)
-}, Et = {
+}, Dt = {
   ...ht,
   "mat2x2<f32>": `
         data[offset] = v[0];
@@ -1187,20 +1187,20 @@ class Wt {
     this.renderTarget = s, this.renderSurface = e;
     const o = this.getGpuRenderTarget(s);
     (s.pixelWidth !== o.width || s.pixelHeight !== o.height) && (this.adaptor.resizeGpuRenderTarget(s), o.width = s.pixelWidth, o.height = s.pixelHeight);
-    const u = s.colorTexture, d = this.viewport, c = u.pixelWidth, h = u.pixelHeight;
+    const u = s.colorTexture, l = this.viewport, c = u.pixelWidth, h = u.pixelHeight;
     if (!a && e instanceof m && (a = e.frame), a) {
       const f = u._resolution;
-      d.x = a.x * f + 0.5 | 0, d.y = a.y * f + 0.5 | 0, d.width = a.width * f + 0.5 | 0, d.height = a.height * f + 0.5 | 0;
+      l.x = a.x * f + 0.5 | 0, l.y = a.y * f + 0.5 | 0, l.width = a.width * f + 0.5 | 0, l.height = a.height * f + 0.5 | 0;
     } else
-      d.x = 0, d.y = 0, d.width = c, d.height = h;
+      l.x = 0, l.y = 0, l.width = c, l.height = h;
     return pt(
       this.projectionMatrix,
       0,
       0,
-      d.width / u.resolution,
-      d.height / u.resolution,
+      l.width / u.resolution,
+      l.height / u.resolution,
       !s.isRoot
-    ), this.adaptor.startRenderPass(s, t, r, d), i && this.onRenderTargetChange.emit(s), s;
+    ), this.adaptor.startRenderPass(s, t, r, l), i && this.onRenderTargetChange.emit(s), s;
   }
   clear(e, t = B.ALL, r) {
     t && (e && (e = this.getRenderTarget(e)), this.adaptor.clear(
@@ -1343,9 +1343,9 @@ class Me {
 }
 Me.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "customRender"
 };
@@ -1375,13 +1375,13 @@ class Ce {
 }
 Ce.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "renderGroup"
 };
-function z(n, e) {
+function E(n, e) {
   e || (e = 0);
   for (let t = e; t < n.length && n[t]; t++)
     n[t] = null;
@@ -1393,28 +1393,28 @@ function we(n, e = []) {
   return e;
 }
 function mt(n, e, t) {
-  const r = n >> 16 & 255, a = n >> 8 & 255, s = n & 255, i = e >> 16 & 255, o = e >> 8 & 255, u = e & 255, d = r + (i - r) * t, c = a + (o - a) * t, h = s + (u - s) * t;
-  return (d << 16) + (c << 8) + h;
+  const r = n >> 16 & 255, a = n >> 8 & 255, s = n & 255, i = e >> 16 & 255, o = e >> 8 & 255, u = e & 255, l = r + (i - r) * t, c = a + (o - a) * t, h = s + (u - s) * t;
+  return (l << 16) + (c << 8) + h;
 }
-const G = 16777215;
-function Pe(n, e) {
-  return n === G || e === G ? n + e - G : mt(n, e, 0.5);
+const P = 16777215;
+function Ge(n, e) {
+  return n === P || e === P ? n + e - P : mt(n, e, 0.5);
 }
-const vt = new C(), Q = he | le | ce;
-function Ge(n, e = !1) {
+const vt = new C(), Q = he | de | ce;
+function Pe(n, e = !1) {
   gt(n);
   const t = n.childrenToUpdate, r = n.updateTick++;
   for (const a in t) {
     const s = Number(a), i = t[a], o = i.list, u = i.index;
-    for (let d = 0; d < u; d++) {
-      const c = o[d];
+    for (let l = 0; l < u; l++) {
+      const c = o[l];
       c.parentRenderGroup === n && c.relativeRenderGroupDepth === s && Re(c, r, 0);
     }
-    z(o, u), i.index = 0;
+    E(o, u), i.index = 0;
   }
   if (e)
     for (let a = 0; a < n.renderGroupChildren.length; a++)
-      Ge(n.renderGroupChildren[a], e);
+      Pe(n.renderGroupChildren[a], e);
 }
 function gt(n) {
   const e = n.root;
@@ -1424,7 +1424,7 @@ function gt(n) {
     n.worldTransform.appendFrom(
       e.relativeGroupTransform,
       r.worldTransform
-    ), n.worldColor = Pe(
+    ), n.worldColor = Ge(
       e.groupColor,
       r.worldColor
     ), t = e.groupAlpha * r.worldAlpha;
@@ -1444,15 +1444,15 @@ function Re(n, e, t) {
     a.relativeGroupTransform
   ), t & Q && Z(n, a, t)) : (t = n._updateFlags, n.relativeGroupTransform.copyFrom(r), t & Q && Z(n, vt, t)), !n.renderGroup) {
     const s = n.children, i = s.length;
-    for (let d = 0; d < i; d++)
-      Re(s[d], e, t);
+    for (let l = 0; l < i; l++)
+      Re(s[l], e, t);
     const o = n.parentRenderGroup, u = n;
     u.renderPipeId && !o.structureDidChange && o.updateRenderable(u);
   }
 }
 function Z(n, e, t) {
-  if (t & le) {
-    n.groupColor = Pe(
+  if (t & de) {
+    n.groupColor = Ge(
       n.localColor,
       e.groupColor
     );
@@ -1484,9 +1484,9 @@ class Be {
     let o = _t;
     t && (o = o.copyFrom(e.renderGroup.localTransform), e.renderGroup.localTransform.copyFrom(t));
     const u = s.renderPipes;
-    for (let d = 0; d < i.length; d++) {
-      const c = i[d];
-      c.runOnRender(), c.instructionSet.renderPipes = u, c.structureDidChange ? z(c.childrenRenderablesToUpdate.list, 0) : xt(c, u), Ge(c), c.structureDidChange ? (c.structureDidChange = !1, ot(c, s)) : bt(c), c.childrenRenderablesToUpdate.index = 0, s.renderPipes.batch.upload(c.instructionSet);
+    for (let l = 0; l < i.length; l++) {
+      const c = i[l];
+      c.runOnRender(), c.instructionSet.renderPipes = u, c.structureDidChange ? E(c.childrenRenderablesToUpdate.list, 0) : xt(c, u), Pe(c), c.structureDidChange ? (c.structureDidChange = !1, ot(c, s)) : bt(c), c.childrenRenderablesToUpdate.index = 0, s.renderPipes.batch.upload(c.instructionSet);
     }
     s.globalUniforms.start({
       worldTransformMatrix: t ? e.renderGroup.localTransform : e.renderGroup.worldTransform,
@@ -1499,9 +1499,9 @@ class Be {
 }
 Be.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "renderGroup"
 };
@@ -1511,7 +1511,7 @@ function bt(n) {
     const a = e[r];
     a.didViewUpdate && n.updateRenderable(a);
   }
-  z(e, t);
+  E(e, t);
 }
 class Ue {
   constructor(e) {
@@ -1551,13 +1551,13 @@ class Ue {
 }
 Ue.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "sprite"
 };
-const D = class Ie {
+const H = class Ie {
   constructor() {
     this.clearBeforeRender = !0, this._backgroundColor = new ae(0), this.color = this._backgroundColor, this.alpha = 1;
   }
@@ -1594,16 +1594,16 @@ const D = class Ie {
   destroy() {
   }
 };
-D.extension = {
+H.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "background",
   priority: 0
 };
-D.defaultOptions = {
+H.defaultOptions = {
   /**
    * {@link WebGLOptions.backgroundAlpha}
    * @default 1
@@ -1620,9 +1620,9 @@ D.defaultOptions = {
    */
   clearBeforeRender: !0
 };
-let yt = D;
+let yt = H;
 const k = {};
-O.handle(l.BlendMode, (n) => {
+O.handle(d.BlendMode, (n) => {
   if (!n.name)
     throw new Error("BlendMode extension must have a name property");
   k[n.name] = n.ref;
@@ -1702,9 +1702,9 @@ class Ae {
 }
 Ae.extension = {
   type: [
-    l.WebGLPipes,
-    l.WebGPUPipes,
-    l.CanvasPipes
+    d.WebGLPipes,
+    d.WebGPUPipes,
+    d.CanvasPipes
   ],
   name: "blendMode"
 };
@@ -1712,7 +1712,7 @@ const R = {
   png: "image/png",
   jpg: "image/jpeg",
   webp: "image/webp"
-}, E = class Oe {
+}, D = class Oe {
   /** @param renderer - The renderer this System works for. */
   constructor(e) {
     this._renderer = e;
@@ -1830,20 +1830,20 @@ const R = {
     this._renderer = null;
   }
 };
-E.extension = {
+D.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem
+    d.WebGLSystem,
+    d.WebGPUSystem
   ],
   name: "extract"
 };
-E.defaultImageOptions = {
+D.defaultImageOptions = {
   /** The format of the image. */
   format: "png",
   /** The quality of the image. */
   quality: 1
 };
-let kt = E;
+let kt = D;
 class W extends m {
   static create(e) {
     return new W({
@@ -1861,7 +1861,7 @@ class W extends m {
     return this.source.resize(e, t, r), this;
   }
 }
-const Tt = new w(), Mt = new de(), St = [0, 0, 0, 0];
+const Tt = new w(), Mt = new le(), St = [0, 0, 0, 0];
 class Fe {
   constructor(e) {
     this._renderer = e;
@@ -1896,10 +1896,10 @@ class Fe {
       height: o.height,
       resolution: r,
       antialias: a
-    }), d = v.shared.translate(-o.x, -o.y);
+    }), l = v.shared.translate(-o.x, -o.y);
     return this._renderer.render({
       container: s,
-      transform: d,
+      transform: l,
       target: u,
       clearColor: i
     }), u.source.updateMipmaps(), u;
@@ -1910,12 +1910,12 @@ class Fe {
 }
 Fe.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem
+    d.WebGLSystem,
+    d.WebGPUSystem
   ],
   name: "textureGenerator"
 };
-class He {
+class ze {
   constructor(e) {
     this._stackIndex = 0, this._globalUniformDataStack = [], this._uniformsPool = [], this._activeUniforms = [], this._bindGroupPool = [], this._activeBindGroups = [], this._renderer = e;
   }
@@ -1949,16 +1949,16 @@ class He {
       worldColor: a || o.worldColor,
       offset: s || o.offset,
       bindGroup: null
-    }, d = this._uniformsPool.pop() || this._createUniforms();
-    this._activeUniforms.push(d);
-    const c = d.uniforms;
+    }, l = this._uniformsPool.pop() || this._createUniforms();
+    this._activeUniforms.push(l);
+    const c = l.uniforms;
     c.uProjectionMatrix = u.projectionMatrix, c.uResolution = u.resolution, c.uWorldTransformMatrix.copyFrom(u.worldTransformMatrix), c.uWorldTransformMatrix.tx -= u.offset.x, c.uWorldTransformMatrix.ty -= u.offset.y, rt(
       u.worldColor,
       c.uWorldColorAlpha,
       0
-    ), d.update();
+    ), l.update();
     let h;
-    this._renderer.renderPipes.uniformBatch ? h = this._renderer.renderPipes.uniformBatch.getUniformBindGroup(d, !1) : (h = this._bindGroupPool.pop() || new Ne(), this._activeBindGroups.push(h), h.setResource(d, 0)), u.bindGroup = h, this._currentGlobalUniformData = u;
+    this._renderer.renderPipes.uniformBatch ? h = this._renderer.renderPipes.uniformBatch.getUniformBindGroup(l, !1) : (h = this._bindGroupPool.pop() || new Ne(), this._activeBindGroups.push(h), h.setResource(l, 0)), u.bindGroup = h, this._currentGlobalUniformData = u;
   }
   push(e) {
     this.bind(e), this._globalUniformDataStack[this._stackIndex++] = this._currentGlobalUniformData;
@@ -1990,16 +1990,16 @@ class He {
     this._renderer = null;
   }
 }
-He.extension = {
+ze.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "globalUniforms"
 };
 let Ct = 1;
-class ze {
+class Ee {
   constructor() {
     this._tasks = [], this._offset = 0;
   }
@@ -2061,11 +2061,11 @@ class ze {
     N.system.remove(this._update, this), this._tasks.length = 0;
   }
 }
-ze.extension = {
+Ee.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "scheduler",
   priority: 0
@@ -2107,9 +2107,9 @@ class L {
 }
 L.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "hello",
   priority: -2
@@ -2118,7 +2118,7 @@ L.defaultOptions = {
   /** {@link WebGLOptions.hello} */
   hello: !1
 };
-function Pt(n) {
+function Gt(n) {
   let e = !1;
   for (const r in n)
     if (n[r] == null) {
@@ -2134,19 +2134,19 @@ function Pt(n) {
   }
   return t;
 }
-function Gt(n) {
+function Pt(n) {
   let e = 0;
   for (let t = 0; t < n.length; t++)
     n[t] == null ? e++ : n[t - e] = n[t];
   return n.length = n.length - e, n;
 }
-const V = class De {
+const V = class He {
   /** @param renderer - The renderer this System works for. */
   constructor(e) {
     this._managedRenderables = [], this._managedHashes = [], this._managedArrays = [], this._renderer = e;
   }
   init(e) {
-    e = { ...De.defaultOptions, ...e }, this.maxUnusedTime = e.renderableGCMaxUnusedTime, this._frequency = e.renderableGCFrequency, this.enabled = e.renderableGCActive;
+    e = { ...He.defaultOptions, ...e }, this.maxUnusedTime = e.renderableGCMaxUnusedTime, this._frequency = e.renderableGCFrequency, this.enabled = e.renderableGCActive;
   }
   get enabled() {
     return !!this._handler;
@@ -2159,13 +2159,13 @@ const V = class De {
     ), this._hashHandler = this._renderer.scheduler.repeat(
       () => {
         for (const t of this._managedHashes)
-          t.context[t.hash] = Pt(t.context[t.hash]);
+          t.context[t.hash] = Gt(t.context[t.hash]);
       },
       this._frequency
     ), this._arrayHandler = this._renderer.scheduler.repeat(
       () => {
         for (const t of this._managedArrays)
-          Gt(t.context[t.hash]);
+          Pt(t.context[t.hash]);
       },
       this._frequency
     )) : (this._renderer.scheduler.cancel(this._handler), this._renderer.scheduler.cancel(this._hashHandler), this._renderer.scheduler.cancel(this._arrayHandler)));
@@ -2193,8 +2193,8 @@ const V = class De {
         s++;
         continue;
       }
-      const u = o.renderGroup ?? o.parentRenderGroup, d = ((e = u == null ? void 0 : u.instructionSet) == null ? void 0 : e.tick) ?? -1;
-      o._lastInstructionTick !== d && t - o._lastUsed > this.maxUnusedTime ? (o.destroyed || a[o.renderPipeId].destroyRenderable(o), o._lastInstructionTick = -1, s++, o.off("destroyed", this._removeRenderable, this)) : r[i - s] = o;
+      const u = o.renderGroup ?? o.parentRenderGroup, l = ((e = u == null ? void 0 : u.instructionSet) == null ? void 0 : e.tick) ?? -1;
+      o._lastInstructionTick !== l && t - o._lastUsed > this.maxUnusedTime ? (o.destroyed || a[o.renderPipeId].destroyRenderable(o), o._lastInstructionTick = -1, s++, o.off("destroyed", this._removeRenderable, this)) : r[i - s] = o;
     }
     r.length = r.length - s;
   }
@@ -2208,8 +2208,8 @@ const V = class De {
 };
 V.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem
+    d.WebGLSystem,
+    d.WebGPUSystem
   ],
   name: "renderableGC",
   priority: 0
@@ -2232,13 +2232,13 @@ V.defaultOptions = {
   renderableGCFrequency: 3e4
 };
 let Rt = V;
-const $ = class Ee {
+const $ = class De {
   /** @param renderer - The renderer this System works for. */
   constructor(e) {
     this._renderer = e, this.count = 0, this.checkCount = 0;
   }
   init(e) {
-    e = { ...Ee.defaultOptions, ...e }, this.checkCountMax = e.textureGCCheckCountMax, this.maxIdle = e.textureGCAMaxIdle ?? e.textureGCMaxIdle, this.active = e.textureGCActive;
+    e = { ...De.defaultOptions, ...e }, this.checkCountMax = e.textureGCCheckCountMax, this.maxIdle = e.textureGCAMaxIdle ?? e.textureGCMaxIdle, this.active = e.textureGCActive;
   }
   /**
    * Checks to see when the last time a texture was used.
@@ -2264,8 +2264,8 @@ const $ = class Ee {
 };
 $.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem
+    d.WebGLSystem,
+    d.WebGPUSystem
   ],
   name: "textureGC"
 };
@@ -2348,9 +2348,9 @@ const j = class We {
 };
 j.extension = {
   type: [
-    l.WebGLSystem,
-    l.WebGPUSystem,
-    l.CanvasSystem
+    d.WebGLSystem,
+    d.WebGPUSystem,
+    d.CanvasSystem
   ],
   name: "view",
   priority: 0
@@ -2380,7 +2380,7 @@ j.defaultOptions = {
 let Ut = j;
 const Vt = [
   yt,
-  He,
+  ze,
   L,
   Ut,
   Be,
@@ -2389,7 +2389,7 @@ const Vt = [
   kt,
   Ye,
   Rt,
-  ze
+  Ee
 ], $t = [
   Ae,
   ve,
@@ -2402,9 +2402,9 @@ const Vt = [
 ];
 export {
   Ot as D,
-  Ht as F,
-  zt as H,
-  Dt as L,
+  zt as F,
+  Et as H,
+  Ht as L,
   M,
   $t as N,
   Ft as O,
@@ -2413,5 +2413,5 @@ export {
   ht as h,
   Vt as j,
   x,
-  Et as z
+  Dt as z
 };

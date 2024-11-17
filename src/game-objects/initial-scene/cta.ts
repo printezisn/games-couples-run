@@ -14,10 +14,10 @@ class CTA extends TextComponent {
       verticalAlignment: 'center',
     });
 
-    this.enter();
+    this._enter();
   }
 
-  private async enter() {
+  private async _enter() {
     this.animate({
       from: { alpha: 0 },
       to: { alpha: 1 },

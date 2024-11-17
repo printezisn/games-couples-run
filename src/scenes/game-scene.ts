@@ -41,7 +41,7 @@ class GameScene extends BaseScene {
     gameState.started = true;
   }
 
-  protected onClick() {
+  protected _onClick() {
     if (!gameState.started) return;
     if (!this._platforms.character.hasPressAndRelease) {
       this._platforms.character.jump();
@@ -64,7 +64,7 @@ class GameScene extends BaseScene {
     start();
   }
 
-  protected onPointerUp() {
+  protected _onPointerUp() {
     if (!gameState.started || !this._platforms.character.hasPressAndRelease) {
       return;
     }

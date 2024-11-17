@@ -1,9 +1,9 @@
-import { D as d, d as ve, P as v, a2 as Ae, e as Ne, h as A, c as g, O as T, X as Y, _ as Be, y as O, V as b, a9 as $, a5 as R, E as j, I as y, H as K, B as z, J as Ge, K as Ie, L as q, N as Ce, Q as L, a7 as N, a8 as De } from "./index-B3pNpNGW.js";
-import { w as U, O as Z } from "./colorToUniform-D3h9cD5N-DXjEhKQ0.js";
-import { j as Oe, N as ye, F as Ue, H as Pe, W as Fe, O as Me, x as Le, L as He, V as J, M as B, h as we } from "./SharedSystems-BfbKkSV2-DP8gxSTR.js";
+import { D as d, U as ve, A as v, a2 as Ae, f as Ne, I as A, c as g, P as T, T as Y, _ as Be, K as O, V as b, a9 as $, a5 as R, v as j, E as U, H as K, u as z, J as Ge, L as Ie, N as q, O as Ce, Q as L, a7 as N, a8 as De } from "./index-CHufY7e4.js";
+import { w as y, O as Z } from "./colorToUniform-NJuNsmcn-umSN0eeF.js";
+import { j as Oe, N as Ue, F as ye, H as Pe, W as Fe, O as Me, x as Le, L as He, V as J, M as B, h as we } from "./SharedSystems-mrBsPRt9-CWuzssxZ.js";
 class Q {
   constructor() {
-    this._didUpload = !1, this._tempState = U.for2d();
+    this._didUpload = !1, this._tempState = y.for2d();
   }
   init(e) {
     e.renderer.runners.contextChange.add(this);
@@ -30,7 +30,7 @@ Q.extension = {
   ],
   name: "batch"
 };
-var x = /* @__PURE__ */ ((t) => (t[t.ELEMENT_ARRAY_BUFFER = 34963] = "ELEMENT_ARRAY_BUFFER", t[t.ARRAY_BUFFER = 34962] = "ARRAY_BUFFER", t[t.UNIFORM_BUFFER = 35345] = "UNIFORM_BUFFER", t))(x || {});
+var p = /* @__PURE__ */ ((t) => (t[t.ELEMENT_ARRAY_BUFFER = 34963] = "ELEMENT_ARRAY_BUFFER", t[t.ARRAY_BUFFER = 34962] = "ARRAY_BUFFER", t[t.UNIFORM_BUFFER = 35345] = "UNIFORM_BUFFER", t))(p || {});
 class Ve {
   constructor(e, r) {
     this.buffer = e || null, this.updateID = -1, this.byteLength = -1, this.type = r;
@@ -132,8 +132,8 @@ class ee {
    */
   createGLBuffer(e) {
     const { _gl: r } = this;
-    let s = x.ARRAY_BUFFER;
-    e.descriptor.usage & A.INDEX ? s = x.ELEMENT_ARRAY_BUFFER : e.descriptor.usage & A.UNIFORM && (s = x.UNIFORM_BUFFER);
+    let s = p.ARRAY_BUFFER;
+    e.descriptor.usage & A.INDEX ? s = p.ELEMENT_ARRAY_BUFFER : e.descriptor.usage & A.UNIFORM && (s = p.UNIFORM_BUFFER);
     const n = new Ve(r.createBuffer(), s);
     return this._gpuBuffers[e.uid] = n, e.on("destroy", this.onBufferDestroy, this), n;
   }
@@ -477,7 +477,7 @@ class se {
     let c = o[a];
     if (c)
       return o[r._key] = c, c;
-    Ue(e, r._attributeData);
+    ye(e, r._attributeData);
     const u = e.buffers;
     c = n.createVertexArray(), n.bindVertexArray(c);
     for (let _ = 0; _ < u.length; _++) {
@@ -547,8 +547,8 @@ class se {
           u.offset
         ), u.instance)
           if (this.hasInstance) {
-            const xe = u.divisor ?? 1;
-            n.vertexAttribDivisor(m, xe);
+            const pe = u.divisor ?? 1;
+            n.vertexAttribDivisor(m, pe);
           } else
             throw new Error("geometry error, GPU Instancing is not supported on this device");
       }
@@ -606,7 +606,7 @@ const Ye = new ve({
   }
   init(e = {}) {
     const { useBackBuffer: r, antialias: s } = { ...ne.defaultOptions, ...e };
-    this.useBackBuffer = r, this._antialias = s, this._renderer.context.supports.msaa || (g("antialiasing, is not supported on when using the back buffer"), this._antialias = !1), this._state = U.for2d();
+    this.useBackBuffer = r, this._antialias = s, this._renderer.context.supports.msaa || (g("antialiasing, is not supported on when using the back buffer"), this._antialias = !1), this._state = y.for2d();
     const n = new Be({
       vertex: `
                 attribute vec2 aPosition;
@@ -1084,7 +1084,7 @@ function Je(t, e) {
         `);
     for (const h in _.resources) {
       const f = _.resources[h];
-      if (f instanceof y)
+      if (f instanceof U)
         f.ubo ? r.push(`
                         sS.bindUniformBlock(
                             resources[${h}],
@@ -1373,7 +1373,7 @@ function at(t, e) {
   }
   return new Qe(n, a);
 }
-const p = {
+const x = {
   textureCount: 0,
   blockIndex: 0
 };
@@ -1393,16 +1393,16 @@ class de {
   bind(e, r) {
     if (this._setProgram(e.glProgram), r)
       return;
-    p.textureCount = 0, p.blockIndex = 0;
+    x.textureCount = 0, x.blockIndex = 0;
     let s = this._shaderSyncFunctions[e.glProgram._key];
-    s || (s = this._shaderSyncFunctions[e.glProgram._key] = this._generateShaderSync(e, this)), s(this._renderer, e, p);
+    s || (s = this._shaderSyncFunctions[e.glProgram._key] = this._generateShaderSync(e, this)), s(this._renderer, e, x);
   }
   /**
    * Updates the uniform group.
    * @param uniformGroup - the uniform group to update
    */
   updateUniformGroup(e) {
-    this._renderer.uniformGroup.updateUniformGroup(e, this._activeProgram, p);
+    this._renderer.uniformGroup.updateUniformGroup(e, this._activeProgram, x);
   }
   /**
    * Binds a uniform block to the shader.
@@ -1587,7 +1587,7 @@ function ut(t, e) {
     `];
   for (const s in t.uniforms) {
     if (!e[s]) {
-      t.uniforms[s] instanceof y ? t.uniforms[s].ubo ? r.push(`
+      t.uniforms[s] instanceof U ? t.uniforms[s].ubo ? r.push(`
                         renderer.shader.bindUniformBlock(uv.${s}, "${s}");
                     `) : r.push(`
                         renderer.shader.updateUniformGroup(uv.${s});
@@ -1689,7 +1689,7 @@ function _t(t) {
 }
 const lt = 0, ht = 1, dt = 2, ft = 3, gt = 4, mt = 5, ge = class D {
   constructor() {
-    this.gl = null, this.stateId = 0, this.polygonOffset = 0, this.blendMode = "none", this._blendEq = !1, this.map = [], this.map[lt] = this.setBlend, this.map[ht] = this.setOffset, this.map[dt] = this.setCullFace, this.map[ft] = this.setDepthTest, this.map[gt] = this.setFrontFace, this.map[mt] = this.setDepthMask, this.checks = [], this.defaultState = U.for2d();
+    this.gl = null, this.stateId = 0, this.polygonOffset = 0, this.blendMode = "none", this._blendEq = !1, this.map = [], this.map[lt] = this.setBlend, this.map[ht] = this.setOffset, this.map[dt] = this.setCullFace, this.map[ft] = this.setDepthTest, this.map[gt] = this.setFrontFace, this.map[mt] = this.setDepthMask, this.checks = [], this.defaultState = y.for2d();
   }
   contextChange(e) {
     this.gl = e, this.blendModesMap = _t(e), this.reset();
@@ -2006,7 +2006,7 @@ const bt = {
       t.resource
     ), e.width = o, e.height = c;
   }
-}, pt = {
+}, xt = {
   id: "video",
   upload(t, e, r, s) {
     if (!t.isValid) {
@@ -2028,7 +2028,7 @@ const bt = {
 }, X = {
   linear: 9729,
   nearest: 9728
-}, xt = {
+}, pt = {
   linear: {
     linear: 9987,
     nearest: 9985
@@ -2059,7 +2059,7 @@ function W(t, e, r, s, n, i, a, o) {
   }
   if ((!o || t.magFilter !== "linear") && e[n](c, e.TEXTURE_MAG_FILTER, X[t.magFilter]), r) {
     if (!o || t.mipmapFilter !== "linear") {
-      const u = xt[t.minFilter][t.mipmapFilter];
+      const u = pt[t.minFilter][t.mipmapFilter];
       e[n](c, e.TEXTURE_MIN_FILTER, u);
     }
   } else
@@ -2306,7 +2306,7 @@ class Ee {
     this.managedTextures = [], this._glTextures = /* @__PURE__ */ Object.create(null), this._glSamplers = /* @__PURE__ */ Object.create(null), this._boundTextures = [], this._activeTextureLocation = -1, this._boundSamplers = /* @__PURE__ */ Object.create(null), this._uploads = {
       image: me,
       buffer: bt,
-      video: pt,
+      video: xt,
       compressed: St
     }, this._useSeparateSamplers = !1, this._renderer = e, this._renderer.renderableGC.addManagedHash(this, "_glTextures"), this._renderer.renderableGC.addManagedHash(this, "_glSamplers");
   }
@@ -2445,7 +2445,7 @@ Ee.extension = {
 };
 class Te {
   init() {
-    const e = new y({
+    const e = new U({
       uColor: { value: new Float32Array([1, 1, 1, 1]), type: "vec4<f32>" },
       uTransformMatrix: { value: new K(), type: "mat3x3<f32>" },
       uRound: { value: 0, type: "f32" }
@@ -2556,10 +2556,10 @@ const It = [
   Et,
   oe,
   ie
-], Ct = [...ye], Dt = [Q, be, Te], Re = [], Se = [], pe = [];
+], Ct = [...Ue], Dt = [Q, be, Te], Re = [], Se = [], xe = [];
 v.handleByNamedList(d.WebGLSystem, Re);
 v.handleByNamedList(d.WebGLPipes, Se);
-v.handleByNamedList(d.WebGLPipesAdaptor, pe);
+v.handleByNamedList(d.WebGLPipesAdaptor, xe);
 v.add(...It, ...Ct, ...Dt);
 class Pt extends Ae {
   constructor() {
@@ -2568,7 +2568,7 @@ class Pt extends Ae {
       type: Ne.WEBGL,
       systems: Re,
       renderPipes: Se,
-      renderPipeAdaptors: pe
+      renderPipeAdaptors: xe
     };
     super(e);
   }

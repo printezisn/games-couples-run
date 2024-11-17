@@ -13,13 +13,13 @@ class Boy extends SpriteComponent {
       cursor: 'pointer',
     });
 
-    this.registerToSignal(
+    this._registerToSignal(
       config.signals.chooseCharacter,
       this._onCharacterSelection,
     );
   }
 
-  protected onClick() {
+  protected _onClick() {
     this.interactive = false;
     gameState.selectedCharacter = 'boy';
     fireSignal(config.signals.chooseCharacter);

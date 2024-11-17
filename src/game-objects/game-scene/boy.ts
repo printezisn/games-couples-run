@@ -1,20 +1,20 @@
 import Character from './character';
 
 class Boy extends Character {
-  protected get increaseSpeedMilestone() {
-    return 10000;
+  constructor() {
+    super('boy');
   }
 
   get hasPressAndRelease() {
     return false;
   }
 
-  protected get totalAllowedJumps() {
-    return 2;
+  protected get _increaseSpeedMilestone() {
+    return 10000;
   }
 
-  constructor() {
-    super('boy');
+  protected get _totalAllowedJumps() {
+    return 2;
   }
 }
 

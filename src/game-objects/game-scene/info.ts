@@ -83,11 +83,11 @@ class Info extends ContainerComponent {
     );
 
     this._totalLifePoints = config.lifePoints;
-    this.registerToSignal(
+    this._registerToSignal(
       config.signals.loseLifePoints,
       this._removeLifePoints,
     );
-    this.registerToSignal(config.signals.updateScore, this._updateScore);
+    this._registerToSignal(config.signals.updateScore, this._updateScore);
   }
 
   private async _removeLifePoints(total: number) {

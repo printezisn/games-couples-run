@@ -6,6 +6,7 @@ class CreditsButton extends CreditsButtonComponent {
       label: 'credits-button',
       resource: 'credits-button.png',
       hoverResource: 'credits-button-hover.png',
+      disabledResource: 'credits-button.png',
       interactive: true,
       cursor: 'pointer',
       position: { x: 155, y: 24 },

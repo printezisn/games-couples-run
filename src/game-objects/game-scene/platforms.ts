@@ -30,7 +30,7 @@ class Platforms extends ContainerComponent {
     this._limit = this.addComponent(new Platform(2, 1000, 0)).width;
     this._createPlatforms();
 
-    this.registerToSignal(config.signals.moveScreen, this._move);
+    this._registerToSignal(config.signals.moveScreen, this._move);
   }
 
   private _move(x: number) {
