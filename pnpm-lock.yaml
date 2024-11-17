@@ -7,6 +7,15 @@ settings:
 importers:
   .:
     dependencies:
+      '@fontsource/lobster':
+        specifier: 5.1.0
+        version: 5.1.0
+      '@fontsource/press-start-2p':
+        specifier: 5.1.0
+        version: 5.1.0
+      '@printezisn/game-engine':
+        specifier: git://github.com/printezisn/game-engine#v0.4.1
+        version: https://codeload.github.com/printezisn/game-engine/tar.gz/fd46855b3dc5294d003ce5ee76db5f2d0d76cafb(@types/node@22.9.0)(rollup@4.25.0)(typescript@5.6.2)
       husky:
         specifier: 9.1.6
         version: 9.1.6
@@ -23,15 +32,6 @@ importers:
       '@eslint/js':
         specifier: 9.14.0
         version: 9.14.0
-      '@fontsource/lobster':
-        specifier: 5.1.0
-        version: 5.1.0
-      '@fontsource/press-start-2p':
-        specifier: 5.1.0
-        version: 5.1.0
-      '@printezisn/game-engine':
-        specifier: git://github.com/printezisn/game-engine#v0.4.1
-        version: https://codeload.github.com/printezisn/game-engine/tar.gz/fd46855b3dc5294d003ce5ee76db5f2d0d76cafb(@types/node@22.9.0)(rollup@4.25.0)(typescript@5.6.2)
       audiosprite:
         specifier: 0.7.2
         version: 0.7.2
