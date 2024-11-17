@@ -1,5 +1,5 @@
-import { D as l, A as O, aa as ee, a5 as p, E as C, Q as We, a0 as te, Z as re, e as b, ab as Le, d as F, a7 as B, n as ne, c as ae, ac as se, W as m, ad as Ve, ae as $e, H as v, S as je, z as Ne, L as ie, w as j, $ as qe, Y as Ke, R as w, O as oe, af as Ye, m as de, ag as Je, U as N, ah as Qe, b as q, B as k, a8 as U, ai as Xe, a9 as M, M as Ze, aj as S, ak as ue, al as le, am as ce, an as K, ao as et } from "./index-jyDePYqI.js";
-import { w as he, k as Y, U as tt, v as rt } from "./colorToUniform-BIrcZJiv-DXniVuIQ.js";
+import { D as l, A as O, aa as ee, a5 as p, E as C, J as We, a0 as te, _ as re, f as b, ab as Le, p as F, a7 as B, q as ne, c as ae, ac as se, W as m, ad as Ve, ae as $e, H as v, S as je, U as Ne, O as ie, b as j, $ as qe, Y as Ke, R as w, Q as oe, af as Ye, m as de, ag as Je, V as N, ah as Xe, e as q, B as k, a8 as U, ai as Qe, a9 as M, M as Ze, aj as S, ak as ue, al as le, am as ce, an as K, ao as et } from "./index-CMMBFnDr.js";
+import { w as he, k as Y, U as tt, v as rt } from "./colorToUniform-DO0xoljk-Dmf7SSNN.js";
 const pe = class I extends We {
   /**
    * @param options - The optional parameters of this filter.
@@ -266,7 +266,7 @@ class it extends nt {
     ).prepend(this._textureMatrix.mapCoord), this.resources.uMaskTexture = this.sprite.texture.source, e.applyFilter(this, t, r, a);
   }
 }
-const E = class fe {
+const H = class fe {
   constructor(e, t) {
     var r, a;
     this.state = he.for2d(), this._batchersByInstructionSet = /* @__PURE__ */ Object.create(null), this._activeBatches = /* @__PURE__ */ Object.create(null), this.renderer = e, this._adaptor = t, (a = (r = this._adaptor).init) == null || a.call(r, this);
@@ -320,7 +320,7 @@ const E = class fe {
     this._activeBatches = null;
   }
 };
-E.extension = {
+H.extension = {
   type: [
     l.WebGLPipes,
     l.WebGPUPipes,
@@ -328,8 +328,8 @@ E.extension = {
   ],
   name: "batch"
 };
-E._availableBatchers = /* @__PURE__ */ Object.create(null);
-let me = E;
+H._availableBatchers = /* @__PURE__ */ Object.create(null);
+let me = H;
 O.handleByMap(l.Batcher, me._availableBatchers);
 O.add(ee);
 const Ot = {
@@ -678,7 +678,7 @@ _e.extension = {
   ],
   name: "stencilMask"
 };
-function Et(n, e) {
+function Ht(n, e) {
   for (const t in n.attributes) {
     const r = n.attributes[t], a = e[t];
     a ? (r.format ?? (r.format = a.format), r.offset ?? (r.offset = a.offset), r.instance ?? (r.instance = a.instance)) : ae(`Attribute ${t} is not present in the shader, but is present in the geometry. Unable to infer attribute details.`);
@@ -748,7 +748,7 @@ x[p.INVERSE_MASK_ACTIVE] = {
     passOp: "replace"
   }
 };
-class Ht {
+class Et {
   constructor(e) {
     this._syncFunctionHash = /* @__PURE__ */ Object.create(null), this._adaptor = e, this._systemCheck();
   }
@@ -758,7 +758,7 @@ class Ht {
    * @private
    */
   _systemCheck() {
-    if (!Qe())
+    if (!Xe())
       throw new Error("Current environment does not allow unsafe-eval, please use pixi.js/unsafe-eval module to enable support.");
   }
   ensureUniformGroup(e) {
@@ -1139,7 +1139,7 @@ ye.defaultOptions = {
 let A = ye;
 class Wt {
   constructor(e) {
-    this.rootViewPort = new w(), this.viewport = new w(), this.onRenderTargetChange = new Xe("onRenderTargetChange"), this.projectionMatrix = new v(), this.defaultClearColor = [0, 0, 0, 0], this._renderSurfaceToRenderTargetHash = /* @__PURE__ */ new Map(), this._gpuRenderTargetHash = /* @__PURE__ */ Object.create(null), this._renderTargetStack = [], this._renderer = e, e.renderableGC.addManagedHash(this, "_gpuRenderTargetHash");
+    this.rootViewPort = new w(), this.viewport = new w(), this.onRenderTargetChange = new Qe("onRenderTargetChange"), this.projectionMatrix = new v(), this.defaultClearColor = [0, 0, 0, 0], this._renderSurfaceToRenderTargetHash = /* @__PURE__ */ new Map(), this._gpuRenderTargetHash = /* @__PURE__ */ Object.create(null), this._renderTargetStack = [], this._renderer = e, e.renderableGC.addManagedHash(this, "_gpuRenderTargetHash");
   }
   /** called when dev wants to finish a render pass */
   finishRenderPass() {
@@ -1381,7 +1381,7 @@ Se.extension = {
   ],
   name: "renderGroup"
 };
-function H(n, e) {
+function E(n, e) {
   e || (e = 0);
   for (let t = e; t < n.length && n[t]; t++)
     n[t] = null;
@@ -1400,7 +1400,7 @@ const P = 16777215;
 function we(n, e) {
   return n === P || e === P ? n + e - P : mt(n, e, 0.5);
 }
-const vt = new C(), Q = ce | ue | le;
+const vt = new C(), X = ce | ue | le;
 function Ge(n, e = !1) {
   gt(n);
   const t = n.childrenToUpdate, r = n.updateTick++;
@@ -1410,7 +1410,7 @@ function Ge(n, e = !1) {
       const c = o[u];
       c.parentRenderGroup === n && c.relativeRenderGroupDepth === s && Pe(c, r, 0);
     }
-    H(o, d), i.index = 0;
+    E(o, d), i.index = 0;
   }
   if (e)
     for (let a = 0; a < n.renderGroupChildren.length; a++)
@@ -1442,7 +1442,7 @@ function Pe(n, e, t) {
   if (a && !a.renderGroup ? (t = t | n._updateFlags, n.relativeGroupTransform.appendFrom(
     r,
     a.relativeGroupTransform
-  ), t & Q && X(n, a, t)) : (t = n._updateFlags, n.relativeGroupTransform.copyFrom(r), t & Q && X(n, vt, t)), !n.renderGroup) {
+  ), t & X && Q(n, a, t)) : (t = n._updateFlags, n.relativeGroupTransform.copyFrom(r), t & X && Q(n, vt, t)), !n.renderGroup) {
     const s = n.children, i = s.length;
     for (let u = 0; u < i; u++)
       Pe(s[u], e, t);
@@ -1450,7 +1450,7 @@ function Pe(n, e, t) {
     d.renderPipeId && !o.structureDidChange && o.updateRenderable(d);
   }
 }
-function X(n, e, t) {
+function Q(n, e, t) {
   if (t & ue) {
     n.groupColor = we(
       n.localColor,
@@ -1486,7 +1486,7 @@ class Re {
     const d = s.renderPipes;
     for (let u = 0; u < i.length; u++) {
       const c = i[u];
-      c.runOnRender(), c.instructionSet.renderPipes = d, c.structureDidChange ? H(c.childrenRenderablesToUpdate.list, 0) : xt(c, d), Ge(c), c.structureDidChange ? (c.structureDidChange = !1, ot(c, s)) : bt(c), c.childrenRenderablesToUpdate.index = 0, s.renderPipes.batch.upload(c.instructionSet);
+      c.runOnRender(), c.instructionSet.renderPipes = d, c.structureDidChange ? E(c.childrenRenderablesToUpdate.list, 0) : xt(c, d), Ge(c), c.structureDidChange ? (c.structureDidChange = !1, ot(c, s)) : bt(c), c.childrenRenderablesToUpdate.index = 0, s.renderPipes.batch.upload(c.instructionSet);
     }
     s.globalUniforms.start({
       worldTransformMatrix: t ? e.renderGroup.localTransform : e.renderGroup.worldTransform,
@@ -1511,7 +1511,7 @@ function bt(n) {
     const a = e[r];
     a.didViewUpdate && n.updateRenderable(a);
   }
-  H(e, t);
+  E(e, t);
 }
 class Be {
   constructor(e) {
@@ -1982,7 +1982,7 @@ Fe.extension = {
   name: "globalUniforms"
 };
 let Ct = 1;
-class Ee {
+class He {
   constructor() {
     this._tasks = [], this._offset = 0;
   }
@@ -2044,7 +2044,7 @@ class Ee {
     j.system.remove(this._update, this), this._tasks.length = 0;
   }
 }
-Ee.extension = {
+He.extension = {
   type: [
     l.WebGLSystem,
     l.WebGPUSystem,
@@ -2123,13 +2123,13 @@ function Pt(n) {
     n[t] == null ? e++ : n[t - e] = n[t];
   return n.length = n.length - e, n;
 }
-const L = class He {
+const L = class Ee {
   /** @param renderer - The renderer this System works for. */
   constructor(e) {
     this._managedRenderables = [], this._managedHashes = [], this._managedArrays = [], this._renderer = e;
   }
   init(e) {
-    e = { ...He.defaultOptions, ...e }, this.maxUnusedTime = e.renderableGCMaxUnusedTime, this._frequency = e.renderableGCFrequency, this.enabled = e.renderableGCActive;
+    e = { ...Ee.defaultOptions, ...e }, this.maxUnusedTime = e.renderableGCMaxUnusedTime, this._frequency = e.renderableGCFrequency, this.enabled = e.renderableGCActive;
   }
   get enabled() {
     return !!this._handler;
@@ -2372,7 +2372,7 @@ const Vt = [
   kt,
   Ye,
   Rt,
-  Ee
+  He
 ], $t = [
   Ie,
   me,
@@ -2385,8 +2385,8 @@ const Vt = [
 ];
 export {
   Ot as D,
-  Et as F,
-  Ht as H,
+  Ht as F,
+  Et as H,
   zt as L,
   $t as N,
   Ft as O,

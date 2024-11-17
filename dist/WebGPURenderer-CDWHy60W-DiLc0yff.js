@@ -1,8 +1,8 @@
-import { D as l, A as G, a2 as ne, d as oe, a3 as w, a4 as ae, O as B, a5 as S, B as P, b as ue, z as E, a6 as v, c as R, L as z, i as M, H, u as F, y as de, _ as ce, K as he, F as A, Q as O, W as U, a7 as b, a8 as le, a9 as pe } from "./index-jyDePYqI.js";
-import { w as L, F as fe, m as ge } from "./colorToUniform-BIrcZJiv-DXniVuIQ.js";
-import { j as me, N as _e, H as be, V as xe, x as ye, F as Ge, z as Pe, D as Be, L as Se, W as Te } from "./SharedSystems-BLUUFvQb-BEMwMCJK.js";
-const x = L.for2d();
-class k {
+import { D as l, A as G, a2 as ne, p as oe, a3 as w, a4 as ae, Q as B, a5 as S, B as P, e as ue, U as E, a6 as v, c as R, O as H, k as M, H as z, v as F, z as de, F as ce, x as he, G as O, J as A, W as U, a7 as b, a8 as le, a9 as pe } from "./index-CMMBFnDr.js";
+import { w as k, F as fe, m as ge } from "./colorToUniform-DO0xoljk-Dmf7SSNN.js";
+import { j as me, N as _e, H as be, V as xe, x as ye, F as Ge, z as Pe, D as Be, L as Se, W as Te } from "./SharedSystems-D9E9Qv4g-DFgzbga0.js";
+const x = k.for2d();
+class L {
   start(e, t, r) {
     const s = e.renderer, i = s.encoder, n = r.gpuProgram;
     this._shader = r, this._geometry = t, i.setGeometry(t, n), x.blendMode = "normal", s.pipeline.getPipeline(
@@ -32,7 +32,7 @@ class k {
     t.bindGroup._touch(s.textureGC.count), i.setPipeline(o), i.renderPassEncoder.setBindGroup(1, n), i.renderPassEncoder.drawIndexed(t.size, 1, t.start);
   }
 }
-k.extension = {
+L.extension = {
   type: [
     l.WebGPUPipesAdaptor
   ],
@@ -608,7 +608,7 @@ function Ee(a, e, t, r, s) {
 function Re(a, e, t, r) {
   return t << 6 | a << 3 | r << 1 | e;
 }
-class $ {
+class q {
   constructor(e) {
     this._moduleCache = /* @__PURE__ */ Object.create(null), this._bufferLayoutsCache = /* @__PURE__ */ Object.create(null), this._bindingNamesCache = /* @__PURE__ */ Object.create(null), this._pipeCache = /* @__PURE__ */ Object.create(null), this._pipeStateCaches = /* @__PURE__ */ Object.create(null), this._colorMask = 15, this._multisampleCount = 1, this._renderer = e;
   }
@@ -764,16 +764,16 @@ class $ {
     this._renderer = null, this._bufferLayoutsCache = null;
   }
 }
-$.extension = {
+q.extension = {
   type: [l.WebGPUSystem],
   name: "pipeline"
 };
-class ze {
+class He {
   constructor() {
     this.contexts = [], this.msaaTextures = [], this.msaaSamples = 1;
   }
 }
-class He {
+class ze {
   init(e, t) {
     this._renderer = e, this._renderTargetSystem = t;
   }
@@ -866,7 +866,7 @@ class He {
   }
   initGpuRenderTarget(e) {
     e.isRoot = !0;
-    const t = new ze();
+    const t = new He();
     return e.colorTextures.forEach((r, s) => {
       if (le.test(r.resource)) {
         const i = r.resource.getContext(
@@ -918,12 +918,12 @@ class He {
     });
   }
 }
-class q extends Pe {
+class $ extends Pe {
   constructor(e) {
-    super(e), this.adaptor = new He(), this.adaptor.init(e, this);
+    super(e), this.adaptor = new ze(), this.adaptor.init(e, this);
   }
 }
-q.extension = {
+$.extension = {
   type: [l.WebGPUSystem],
   name: "renderTarget"
 };
@@ -1101,7 +1101,7 @@ g.max = {
 };
 class X {
   constructor() {
-    this.defaultState = new L(), this.defaultState.blend = !0;
+    this.defaultState = new k(), this.defaultState.blend = !0;
   }
   contextChange(e) {
     this.gpu = e;
@@ -1148,7 +1148,7 @@ const Fe = {
       }
     );
   }
-}, Q = {
+}, J = {
   "bc1-rgba-unorm": { blockBytes: 8, blockWidth: 4, blockHeight: 4 },
   "bc2-rgba-unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 },
   "bc3-rgba-unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 },
@@ -1156,11 +1156,11 @@ const Fe = {
   "etc1-rgb-unorm": { blockBytes: 8, blockWidth: 4, blockHeight: 4 },
   "etc2-rgba8unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 },
   "astc-4x4-unorm": { blockBytes: 16, blockWidth: 4, blockHeight: 4 }
-}, Ae = { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, Oe = {
+}, Oe = { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, Ae = {
   type: "compressed",
   upload(a, e, t) {
     let r = a.pixelWidth, s = a.pixelHeight;
-    const i = Q[a.format] || Ae;
+    const i = J[a.format] || Oe;
     for (let n = 0; n < a.resource.length; n++) {
       const o = a.resource[n], u = Math.ceil(r / i.blockWidth) * i.blockBytes;
       t.device.queue.writeTexture(
@@ -1181,7 +1181,7 @@ const Fe = {
       ), r = Math.max(r >> 1, 1), s = Math.max(s >> 1, 1);
     }
   }
-}, Z = {
+}, Q = {
   type: "image",
   upload(a, e, t) {
     const r = a.resource;
@@ -1197,13 +1197,13 @@ const Fe = {
       }
     );
   }
-}, Le = {
+}, ke = {
   type: "video",
   upload(a, e, t) {
-    Z.upload(a, e, t);
+    Q.upload(a, e, t);
   }
 };
-class ke {
+class Le {
   constructor(e) {
     this.device = e, this.sampler = e.createSampler({ minFilter: "linear" }), this.pipelines = {};
   }
@@ -1329,13 +1329,13 @@ class ke {
     return this.device.queue.submit([n.finish()]), i || r.destroy(), e;
   }
 }
-class J {
+class Z {
   constructor(e) {
     this.managedTextures = [], this._gpuSources = /* @__PURE__ */ Object.create(null), this._gpuSamplers = /* @__PURE__ */ Object.create(null), this._bindGroupHash = /* @__PURE__ */ Object.create(null), this._textureViewHash = /* @__PURE__ */ Object.create(null), this._uploads = {
-      image: Z,
+      image: Q,
       buffer: Fe,
-      video: Le,
-      compressed: Oe
+      video: ke,
+      compressed: Ae
     }, this._renderer = e, e.renderableGC.addManagedHash(this, "_gpuSources"), e.renderableGC.addManagedHash(this, "_gpuSamplers"), e.renderableGC.addManagedHash(this, "_bindGroupHash"), e.renderableGC.addManagedHash(this, "_textureViewHash");
   }
   contextChange(e) {
@@ -1348,7 +1348,7 @@ class J {
     }
     let t = GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST;
     e.uploadMethodId !== "compressed" && (t |= GPUTextureUsage.RENDER_ATTACHMENT, t |= GPUTextureUsage.COPY_SRC);
-    const r = Q[e.format] || { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, s = Math.ceil(e.pixelWidth / r.blockWidth) * r.blockWidth, i = Math.ceil(e.pixelHeight / r.blockHeight) * r.blockHeight, n = {
+    const r = J[e.format] || { blockBytes: 4, blockWidth: 1, blockHeight: 1 }, s = Math.ceil(e.pixelWidth / r.blockWidth) * r.blockWidth, i = Math.ceil(e.pixelHeight / r.blockHeight) * r.blockHeight, n = {
       label: e.label,
       size: { width: s, height: i },
       format: e.format,
@@ -1368,7 +1368,7 @@ class J {
     t && (this._gpuSources[e.uid] = null, t.destroy());
   }
   onUpdateMipmaps(e) {
-    this._mipmapGenerator || (this._mipmapGenerator = new ke(this._gpu.device));
+    this._mipmapGenerator || (this._mipmapGenerator = new Le(this._gpu.device));
     const t = this.getGpuSource(e);
     this._mipmapGenerator.generateMipmap(t);
   }
@@ -1405,7 +1405,7 @@ class J {
     return this._bindGroupHash[e.uid] = new E({
       0: t,
       1: t.style,
-      2: new z({
+      2: new H({
         uTextureMatrix: { type: "mat3x3<f32>", value: e.textureMatrix.mapCoord }
       })
     }), this._bindGroupHash[e.uid];
@@ -1455,7 +1455,7 @@ class J {
     this._gpu = null, this._mipmapGenerator = null, this._gpuSources = null, this._bindGroupHash = null, this._textureViewHash = null, this._gpuSamplers = null;
   }
 }
-J.extension = {
+Z.extension = {
   type: [
     l.WebGPUSystem
   ],
@@ -1463,8 +1463,8 @@ J.extension = {
 };
 class ee {
   init() {
-    const e = new z({
-      uTransformMatrix: { value: new H(), type: "mat3x3<f32>" },
+    const e = new H({
+      uTransformMatrix: { value: new z(), type: "mat3x3<f32>" },
       uColor: { value: new Float32Array([1, 1, 1, 1]), type: "vec4<f32>" },
       uRound: { value: 0, type: "f32" }
     }), t = F({
@@ -1473,10 +1473,10 @@ class ee {
         de,
         ce(he()),
         fe,
-        A
+        O
       ]
     });
-    this.shader = new O({
+    this.shader = new A({
       gpuProgram: t,
       resources: {
         // added on the fly!
@@ -1529,16 +1529,16 @@ class te {
       bits: [
         ge,
         Be,
-        A
+        O
       ]
     });
-    this._shader = new O({
+    this._shader = new A({
       gpuProgram: e,
       resources: {
         uTexture: U.EMPTY._source,
         uSampler: U.EMPTY._source.style,
         textureUniforms: {
-          uTextureMatrix: { type: "mat3x3<f32>", value: new H() }
+          uTextureMatrix: { type: "mat3x3<f32>", value: new z() }
         }
       }
     });
@@ -1579,15 +1579,15 @@ const De = [
   V,
   T,
   W,
-  J,
-  q,
+  Z,
+  $,
   Y,
   X,
-  $,
+  q,
   I,
   N,
   D
-], We = [..._e, K], Ie = [k, te, ee], re = [], se = [], ie = [];
+], We = [..._e, K], Ie = [L, te, ee], re = [], se = [], ie = [];
 G.handleByNamedList(l.WebGPUSystem, re);
 G.handleByNamedList(l.WebGPUPipes, se);
 G.handleByNamedList(l.WebGPUPipesAdaptor, ie);
