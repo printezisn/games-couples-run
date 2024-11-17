@@ -7,6 +7,7 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'couples-run',
     },
+    copyPublicDir: true,
   },
   plugins: [dts({ rollupTypes: true })],
 });

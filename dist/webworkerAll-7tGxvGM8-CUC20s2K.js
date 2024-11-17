@@ -1,5 +1,5 @@
-import { D as p, U as Z, A as v, i as ct, l as pt, b as he, E as F, z as Re, c as V, V as U, S as ft, f as ee, m as Ue, H as B, $ as te, r as G, I as C, w as _, t as gt, Z as re, C as mt, a as xt, X as _t, s as N, Y as q, x as z, d as k, e as J, g as bt, h as P, y as ce, j as L, o as Pe, p as yt, K as ie, q as Me, u as Ae, v as vt, B as Tt, F as St, G as ke, J as wt, L as Ct, N as Fe, O as Bt, P as He, Q as pe, R as fe, T as Q, W as D, _ as Rt, a0 as Ut, a1 as Pt } from "./index-CHufY7e4.js";
-import { k as w, w as E, v as $, U as Ge, m as Mt, O as At } from "./colorToUniform-NJuNsmcn-umSN0eeF.js";
+import { D as p, j as Z, A as v, a as ct, h as pt, w as he, L as F, z as Re, c as V, W as U, S as ft, d as ee, m as Ue, H as B, $ as te, b as G, B as C, e as _, r as gt, g as re, P as mt, x as xt, X as _t, s as N, t as q, i as z, C as k, k as Q, l as bt, n as P, o as ce, p as L, Y as Pe, q as yt, Q as ie, u as Me, v as Ae, K as vt, y as Tt, _ as St, F as ke, G as wt, I as Ct, J as Fe, N as Bt, O as He, R as pe, T as fe, U as J, V as D, Z as Rt, a0 as Ut, a1 as Pt } from "./index-jyDePYqI.js";
+import { k as w, w as E, v as I, U as Ge, m as Mt, O as At } from "./colorToUniform-BIrcZJiv-DXniVuIQ.js";
 class ze {
   /**
    * Initialize the plugin with scope of application instance
@@ -376,14 +376,14 @@ Ve.extension = {
   ],
   name: "filter"
 };
-const Ee = class $e extends Z {
+const Ee = class Ie extends Z {
   constructor(...e) {
     let t = e[0] ?? {};
     t instanceof Float32Array && (te(Pe, "use new MeshGeometry({ positions, uvs, indices }) instead"), t = {
       positions: t,
       uvs: e[1],
       indices: e[2]
-    }), t = { ...$e.defaultOptions, ...t };
+    }), t = { ...Ie.defaultOptions, ...t };
     const r = t.positions || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]), i = t.uvs || new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]), a = t.indices || new Uint32Array([0, 1, 2, 0, 2, 3]), n = t.shrinkBuffersToFit, o = new G({
       data: r,
       label: "attribute-mesh-positions",
@@ -464,12 +464,12 @@ function zt(s) {
       `max-width: ${s.wordWrapWidth}px`
     ] : [],
     ...e ? [Le(e)] : [],
-    ...s.dropShadow ? [Ie(s.dropShadow)] : [],
+    ...s.dropShadow ? [$e(s.dropShadow)] : [],
     ...s.cssOverrides
   ].join(";")} }`];
   return Dt(s.tagStyles, r), r.join(" ");
 }
-function Ie(s) {
+function $e(s) {
   const e = P.shared.setValue(s.color).setAlpha(s.alpha).toHexa(), t = Math.round(Math.cos(s.angle) * s.distance), r = Math.round(Math.sin(s.angle) * s.distance), i = `${t}px ${r}px`;
   return s.blur > 0 ? `text-shadow: ${i} ${s.blur}px ${e}` : `text-shadow: ${i} ${e}`;
 }
@@ -498,7 +498,7 @@ const ge = {
   fill: (s) => `color: ${P.shared.setValue(s).toHex()}`,
   breakWords: (s) => `word-wrap: ${s ? "break-all" : "break-word"}`,
   stroke: Le,
-  dropShadow: Ie
+  dropShadow: $e
 };
 function Dt(s, e) {
   for (const t in s) {
@@ -508,7 +508,7 @@ function Dt(s, e) {
     e.push(`${t} { ${i.join(";")} }`);
   }
 }
-class ae extends J {
+class ae extends Q {
   constructor(e = {}) {
     super(e), this._cssOverrides = [], this.cssOverrides ?? (this.cssOverrides = e.cssOverrides), this.tagStyles = e.tagStyles ?? {};
   }
@@ -636,7 +636,7 @@ class Xe {
     const i = r.customShader || this._adaptor.shader;
     this.state.blendMode = e.groupBlendMode;
     const a = i.resources.localUniforms.uniforms;
-    a.uTransformMatrix = e.groupTransform, a.uRound = t._roundPixels | e._roundPixels, $(
+    a.uTransformMatrix = e.groupTransform, a.uRound = t._roundPixels | e._roundPixels, I(
       e.groupColorAlpha,
       a.uColor,
       0
@@ -810,7 +810,7 @@ class Ne {
       return;
     e.state.blendMode = re(e.groupBlendMode, e.texture._source);
     const t = this.localUniforms;
-    t.uniforms.uTransformMatrix = e.groupTransform, t.uniforms.uRound = this.renderer._roundPixels | e._roundPixels, t.update(), $(
+    t.uniforms.uTransformMatrix = e.groupTransform, t.uniforms.uRound = this.renderer._roundPixels | e._roundPixels, t.update(), I(
       e.groupColorAlpha,
       t.uniforms.uColor,
       0
@@ -879,7 +879,7 @@ function ye(s, e = null) {
     e[r + 0] = i + 0, e[r + 1] = i + 1, e[r + 2] = i + 2, e[r + 3] = i + 0, e[r + 4] = i + 2, e[r + 5] = i + 3;
   return e;
 }
-function $t(s) {
+function It(s) {
   return {
     dynamicUpdate: ve(s, !0),
     staticUpdate: ve(s, !1)
@@ -902,7 +902,7 @@ function ve(s, e) {
     if (e !== n.dynamic)
       continue;
     t.push(`offset = index + ${r}`), t.push(n.code);
-    const o = Q(n.format);
+    const o = J(n.format);
     r += o.stride / 4;
   }
   t.push(`
@@ -915,13 +915,13 @@ function ve(s, e) {
 `);
   return new Function("ps", "f32v", "u32v", i);
 }
-class It {
+class $t {
   constructor(e) {
     this._size = 0, this._generateParticleUpdateCache = {};
     const t = this._size = e.size ?? 1e3, r = e.properties;
     let i = 0, a = 0;
     for (const u in r) {
-      const l = r[u], c = Q(l.format);
+      const l = r[u], c = J(l.format);
       l.dynamic ? a += c.stride : i += c.stride;
     }
     this._dynamicStride = a / 4, this._staticStride = i / 4, this.staticAttributeBuffer = new D(t * 4 * i), this.dynamicAttributeBuffer = new D(t * 4 * a), this.indexBuffer = ye(t);
@@ -939,7 +939,7 @@ class It {
       usage: C.VERTEX | C.COPY_DST
     });
     for (const u in r) {
-      const l = r[u], c = Q(l.format);
+      const l = r[u], c = J(l.format);
       l.dynamic ? (n.addAttribute(l.attributeName, {
         buffer: this._dynamicBuffer,
         stride: this._dynamicStride * 4,
@@ -961,7 +961,7 @@ class It {
     return this._generateParticleUpdateCache[t] ? this._generateParticleUpdateCache[t] : (this._generateParticleUpdateCache[t] = this.generateParticleUpdate(e), this._generateParticleUpdateCache[t]);
   }
   generateParticleUpdate(e) {
-    return $t(e);
+    return It(e);
   }
   update(e, t) {
     e.length > this._size && (t = !0, this._size = Math.max(e.length, this._size * 1.5 | 0), this.staticAttributeBuffer = new D(this._size * this._staticStride * 4 * 4), this.dynamicAttributeBuffer = new D(this._size * this._dynamicStride * 4 * 4), this.indexBuffer = ye(this._size), this.geometry.indexBuffer.setDataWithSize(
@@ -1150,7 +1150,7 @@ class qe {
     return this._gpuBufferHash[e.uid] || this._initBuffer(e);
   }
   _initBuffer(e) {
-    return this._gpuBufferHash[e.uid] = new It({
+    return this._gpuBufferHash[e.uid] = new $t({
       size: e.particleChildren.length,
       properties: e._properties
     }), e.on("destroyed", this._destroyRenderableBound), this._gpuBufferHash[e.uid];
@@ -1169,7 +1169,7 @@ class qe {
     const a = this.state;
     i.update(t, e._childrenDirty), e._childrenDirty = !1, a.blendMode = re(e.blendMode, e.texture._source);
     const n = this.localUniforms.uniforms, o = n.uTranslationMatrix;
-    e.worldTransform.copyTo(o), o.prepend(r.globalUniforms.globalUniformData.projectionMatrix), n.uResolution = r.globalUniforms.globalUniformData.resolution, n.uRound = r._roundPixels | e._roundPixels, $(
+    e.worldTransform.copyTo(o), o.prepend(r.globalUniforms.globalUniformData.projectionMatrix), n.uResolution = r.globalUniforms.globalUniformData.resolution, n.uRound = r._roundPixels | e._roundPixels, I(
       e.groupColorAlpha,
       n.uColor,
       0
@@ -1180,23 +1180,23 @@ class qe {
     this.defaultShader && (this.defaultShader.destroy(), this.defaultShader = null);
   }
 }
-class Je extends qe {
+class Qe extends qe {
   constructor(e) {
     super(e, new Vt());
   }
 }
-Je.extension = {
+Qe.extension = {
   type: [
     p.WebGLPipes
   ],
   name: "particle"
 };
-class Qe extends qe {
+class Je extends qe {
   constructor(e) {
     super(e, new Et());
   }
 }
-Qe.extension = {
+Je.extension = {
   type: [
     p.WebGPUPipes
   ],
@@ -1405,7 +1405,7 @@ const Nt = {
   }
 };
 let Y, X;
-class Jt extends ie {
+class Qt extends ie {
   constructor() {
     Y ?? (Y = Me({
       name: "tiling-sprite-shader",
@@ -1456,7 +1456,7 @@ class Jt extends ie {
     ), l.invert(), o.uniforms.uMapCoord = u.mapCoord, o.uniforms.uClampFrame = u.uClampFrame, o.uniforms.uClampOffset = u.uClampOffset, o.uniforms.uTextureTransform = l, o.uniforms.uSizeAnchor[0] = e, o.uniforms.uSizeAnchor[1] = t, o.uniforms.uSizeAnchor[2] = i, o.uniforms.uSizeAnchor[3] = a, n && (this.resources.uTexture = n.source, this.resources.uSampler = n.source.style);
   }
 }
-class Qt extends se {
+class Jt extends se {
   constructor() {
     super({
       positions: new Float32Array([0, 0, 1, 0, 1, 1, 0, 1]),
@@ -1484,7 +1484,7 @@ function tr(s, e) {
   const o = B.shared;
   o.copyFrom(s._tileTransform.matrix), o.tx /= s.width, o.ty /= s.height, o.invert(), o.scale(s.width / r, s.height / i), er(e, 2, 0, o);
 }
-const W = new Qt();
+const W = new Jt();
 class rt {
   constructor(e) {
     this._state = E.default2d, this._tilingSpriteDataHash = /* @__PURE__ */ Object.create(null), this._destroyRenderableBound = this.destroyRenderable.bind(this), this._renderer = e, this._renderer.renderableGC.addManagedHash(this, "_tilingSpriteDataHash");
@@ -1509,13 +1509,13 @@ class rt {
       const o = i.batchableMesh;
       e.didViewUpdate && (this._updateBatchableMesh(e), o.geometry = a, o.renderable = e, o.transform = e.groupTransform, o.texture = e._texture), o.roundPixels = this._renderer._roundPixels | e._roundPixels, r.addToBatch(o, t);
     } else
-      r.break(t), i.shader || (i.shader = new Jt()), this.updateRenderable(e), t.add(e);
+      r.break(t), i.shader || (i.shader = new Qt()), this.updateRenderable(e), t.add(e);
   }
   execute(e) {
     const { shader: t } = this._tilingSpriteDataHash[e.uid];
     t.groups[0] = this._renderer.globalUniforms.bindGroup;
     const r = t.resources.localUniforms.uniforms;
-    r.uTransformMatrix = e.groupTransform, r.uRound = this._renderer._roundPixels | e._roundPixels, $(
+    r.uTransformMatrix = e.groupTransform, r.uRound = this._renderer._roundPixels | e._roundPixels, I(
       e.groupColorAlpha,
       r.uColor,
       0
@@ -2229,7 +2229,7 @@ class ot {
       text: e,
       style: r,
       resolution: t
-    }), e.style instanceof J || (e.style = new J(e.style));
+    }), e.style instanceof Q || (e.style = new Q(e.style));
     const { texture: a, canvasAndContext: n } = this.createTextureAndCanvas(
       e
     );
@@ -2293,7 +2293,7 @@ class ot {
     let y, M;
     const H = t.dropShadow ? 2 : 1;
     for (let S = 0; S < H; ++S) {
-      const A = t.dropShadow && S === 0, I = A ? Math.ceil(Math.max(1, R) + t.padding * 2) : 0, dt = I * r;
+      const A = t.dropShadow && S === 0, $ = A ? Math.ceil(Math.max(1, R) + t.padding * 2) : 0, dt = $ * r;
       if (A) {
         u.fillStyle = "black", u.strokeStyle = "black";
         const T = t.dropShadow, ut = T.color, lt = T.alpha;
@@ -2311,14 +2311,14 @@ class ot {
           t,
           i,
           y + t.padding,
-          M + t.padding - I,
+          M + t.padding - $,
           !0
         ), t._fill !== void 0 && this._drawLetterSpacing(
           f[T],
           t,
           i,
           y + t.padding,
-          M + t.padding - I
+          M + t.padding - $
         );
     }
   }
@@ -2368,8 +2368,8 @@ v.add(De);
 v.add(Xe);
 v.add(ct);
 v.add(Ne);
-v.add(Je);
 v.add(Qe);
+v.add(Je);
 v.add(ot);
 v.add(nt);
 v.add(it);

@@ -1,4 +1,4 @@
-import { a9 as M, V as _, R as x } from "./index-CHufY7e4.js";
+import { a9 as _, W as M, T as x } from "./index-jyDePYqI.js";
 const P = {
   normal: 0,
   add: 1,
@@ -120,7 +120,7 @@ const P = {
   }
 };
 p.default2d = p.for2d();
-let k = p, v = 0;
+let T = p, v = 0;
 class y {
   /**
    * @param textureOptions - options that will be passed to BaseRenderTexture constructor
@@ -136,7 +136,7 @@ class y {
    * @param antialias
    */
   createTexture(t, o, e) {
-    const r = new M({
+    const r = new _({
       ...this.textureOptions,
       width: t,
       height: o,
@@ -144,7 +144,7 @@ class y {
       antialias: e,
       autoGarbageCollect: !0
     });
-    return new _({
+    return new M({
       source: r,
       label: `texturePool_${v++}`
     });
@@ -198,7 +198,7 @@ class y {
     this._texturePool = {};
   }
 }
-const F = new y(), m = {
+const k = new y(), m = {
   name: "local-uniform-bit",
   vertex: {
     header: (
@@ -231,7 +231,7 @@ const F = new y(), m = {
         `
     )
   }
-}, T = {
+}, F = {
   ...m,
   vertex: {
     ...m.vertex,
@@ -287,11 +287,11 @@ function U(i, t, o) {
   t[o++] = (i & 255) / 255 * e, t[o++] = (i >> 8 & 255) / 255 * e, t[o++] = (i >> 16 & 255) / 255 * e, t[o++] = e;
 }
 export {
-  T as F,
+  F,
   O,
   S as U,
-  F as k,
+  k,
   m,
   U as v,
-  k as w
+  T as w
 };

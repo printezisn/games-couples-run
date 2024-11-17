@@ -3,7 +3,7 @@ import {
   fadeOutSound,
   fireSignal,
   playSound,
-  RectangleComponent,
+  SpriteComponent,
   TextComponent,
 } from '@printezisn/game-engine';
 import config from '../../config';
@@ -37,23 +37,35 @@ class Info extends ContainerComponent {
     for (let i = 0; i < config.lifePoints; i++) {
       dist +=
         this.addComponent(
-          new RectangleComponent({
+          new SpriteComponent({
             label: `life-point-${i}`,
-            fillColor: 0x2fff00,
-            width: 10,
-            height: 20,
+            resource: {
+              fillColor: 0x2fff00,
+              rectangle: {
+                x: 0,
+                y: 0,
+                width: 10,
+                height: 20,
+              },
+            },
             position: { x: dist, y: 0 },
           }),
-        ).width + 15;
+        ).width + 5;
     }
 
     dist +=
       this.addComponent(
-        new RectangleComponent({
+        new SpriteComponent({
           label: 'separator',
-          fillColor: 0xcccccc,
-          width: 3,
-          height: 20,
+          resource: {
+            fillColor: 0xcccccc,
+            rectangle: {
+              x: 0,
+              y: 0,
+              width: 3,
+              height: 20,
+            },
+          },
           position: { x: dist + 10, y: 0 },
         }),
       ).width + 25;
