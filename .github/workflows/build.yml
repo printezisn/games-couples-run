@@ -30,8 +30,6 @@ jobs:
           version: 9
       - name: Install dependencies
         run: pnpm i
-      - name: ls
-        run: cat ./node_modules/@printezisn/game-engine/dist/game-engine.js
       - name: Run linter
         run: pnpm lint
       - name: Build
