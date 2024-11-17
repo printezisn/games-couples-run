@@ -34,7 +34,7 @@
     "lint": "tsc && eslint ./src",
     "lint:fix": "tsc && eslint ./src --fix",
     "prettier:format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky && vite build"
   },
   "dependencies": {
     "husky": "9.1.6"
