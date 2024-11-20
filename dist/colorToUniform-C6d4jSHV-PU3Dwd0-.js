@@ -1,4 +1,4 @@
-import { a9 as _, W as M, T as x } from "./index-CMMBFnDr.js";
+import { a9 as _, W as M, U as x } from "./index-CXOVsyEC.js";
 const P = {
   normal: 0,
   add: 1,
@@ -120,7 +120,7 @@ const P = {
   }
 };
 p.default2d = p.for2d();
-let T = p, v = 0;
+let k = p, v = 0;
 class y {
   /**
    * @param textureOptions - options that will be passed to BaseRenderTexture constructor
@@ -198,7 +198,7 @@ class y {
     this._texturePool = {};
   }
 }
-const k = new y(), m = {
+const F = new y(), m = {
   name: "local-uniform-bit",
   vertex: {
     header: (
@@ -231,7 +231,7 @@ const k = new y(), m = {
         `
     )
   }
-}, F = {
+}, T = {
   ...m,
   vertex: {
     ...m.vertex,
@@ -268,7 +268,7 @@ const k = new y(), m = {
     )
   }
 };
-class S {
+class U {
   constructor() {
     this.batcherName = "default", this.attributeSize = 4, this.indexSize = 6, this.packAsQuad = !0, this.roundPixels = 0, this._attributeStart = 0, this._batcher = null, this._batch = null;
   }
@@ -282,16 +282,16 @@ class S {
     this.renderable = null, this.texture = null, this._batcher = null, this._batch = null, this.bounds = null;
   }
 }
-function U(i, t, o) {
+function S(i, t, o) {
   const e = (i >> 24 & 255) / 255;
   t[o++] = (i & 255) / 255 * e, t[o++] = (i >> 8 & 255) / 255 * e, t[o++] = (i >> 16 & 255) / 255 * e, t[o++] = e;
 }
 export {
-  F,
+  T as F,
   O,
-  S as U,
-  k,
+  U,
+  F as k,
   m,
-  U as v,
-  T as w
+  S as v,
+  k as w
 };

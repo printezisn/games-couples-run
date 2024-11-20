@@ -1,6 +1,6 @@
-import { D as d, X as ve, A as v, a2 as Ae, p as Ne, B as A, c as g, Q as T, V as Y, _ as Be, J as O, W as b, a9 as $, a5 as R, x as j, O as y, H as z, w as K, I as Ge, K as Ce, L as q, N as Ie, R as M, a7 as N, a8 as De } from "./index-CMMBFnDr.js";
-import { w as U, O as Z } from "./colorToUniform-DO0xoljk-Dmf7SSNN.js";
-import { j as Oe, N as ye, F as Ue, H as Pe, z as Fe, O as Le, x as Me, L as He, V as J, k as B, h as we } from "./SharedSystems-D9E9Qv4g-DFgzbga0.js";
+import { D as d, K as ve, A as v, a2 as Ae, b as Ne, B as A, c as g, R as T, V as Y, _ as Be, J as O, W as b, a9 as $, a5 as R, x as j, O as y, H as K, u as z, I as Ge, L as Ce, N as q, Q as Ie, T as M, a7 as N, a8 as De } from "./index-CXOVsyEC.js";
+import { w as U, O as Z } from "./colorToUniform-C6d4jSHV-PU3Dwd0-.js";
+import { j as Oe, N as ye, F as Ue, H as Pe, z as Fe, O as Le, x as Me, L as He, V as J, k as B, h as we } from "./SharedSystems-Bqn2NZaV-CKv4szoS.js";
 class Q {
   constructor() {
     this._didUpload = !1, this._tempState = U.for2d();
@@ -818,7 +818,7 @@ const ce = {
   // mat3:     16 * 3,
   // mat4:     16 * 4,
 };
-function ze(t) {
+function Ke(t) {
   const e = t.map((i) => ({
     data: i,
     offset: 0,
@@ -837,7 +837,7 @@ function ze(t) {
   }
   return n = Math.ceil(n / 16) * 16, { uboElements: e, size: n };
 }
-function Ke(t, e) {
+function ze(t, e) {
   const r = Math.max(ce[t.data.type] / 16, 1), s = t.data.value.length / t.data.size, n = (4 - s % 4) % 4;
   return `
         v = uv.${t.data.name};
@@ -861,14 +861,14 @@ function qe(t) {
   return He(
     t,
     "uboStd40",
-    Ke,
+    ze,
     we
   );
 }
 class ue extends Pe {
   constructor() {
     super({
-      createUboElements: ze,
+      createUboElements: Ke,
       generateUboSync: qe
     });
   }
@@ -2447,9 +2447,9 @@ class Te {
   init() {
     const e = new y({
       uColor: { value: new Float32Array([1, 1, 1, 1]), type: "vec4<f32>" },
-      uTransformMatrix: { value: new z(), type: "mat3x3<f32>" },
+      uTransformMatrix: { value: new K(), type: "mat3x3<f32>" },
       uRound: { value: 0, type: "f32" }
-    }), r = j(), s = K({
+    }), r = j(), s = z({
       name: "graphics",
       bits: [
         Ge,
@@ -2494,7 +2494,7 @@ Te.extension = {
 };
 class be {
   init() {
-    const e = K({
+    const e = z({
       name: "mesh",
       bits: [
         Z,
@@ -2507,7 +2507,7 @@ class be {
       resources: {
         uTexture: b.EMPTY.source,
         textureUniforms: {
-          uTextureMatrix: { type: "mat3x3<f32>", value: new z() }
+          uTextureMatrix: { type: "mat3x3<f32>", value: new K() }
         }
       }
     });

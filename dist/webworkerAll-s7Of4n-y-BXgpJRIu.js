@@ -1,5 +1,5 @@
-import { D as p, X as Z, A as v, l as ct, a as pt, b as he, O as F, U as Re, c as V, W as U, S as ft, p as ee, m as Ue, H as C, $ as te, e as G, B, f as _, o as gt, i as re, g as mt, y as xt, h as _t, s as N, j as q, k as z, P as k, n as J, C as bt, q as P, r as ce, t as L, Y as Pe, u as yt, J as ie, v as Me, w as Ae, x as vt, z as Tt, F as St, G as ke, I as wt, K as Bt, L as Fe, N as Ct, Q as He, R as pe, T as fe, V as Q, Z as D, _ as Rt, a0 as Ut, a1 as Pt } from "./index-CMMBFnDr.js";
-import { k as w, w as E, v as $, U as Ge, m as Mt, O as At } from "./colorToUniform-DO0xoljk-Dmf7SSNN.js";
+import { D as p, K as Z, A as v, l as ct, a as pt, w as he, O as F, z as Re, c as V, W as U, S as ft, b as ee, m as Ue, H as C, $ as te, d as G, B, e as _, o as gt, i as re, f as mt, v as xt, X as _t, s as N, g as q, h as z, P as k, j as J, C as bt, k as P, n as ce, q as L, Y as Pe, r as yt, J as ie, t as Me, u as Ae, x as vt, y as Tt, F as St, G as ke, I as wt, L as Bt, N as Fe, Q as Ct, R as He, T as pe, U as fe, V as Q, Z as D, _ as Rt, a0 as Ut, a1 as Pt } from "./index-CXOVsyEC.js";
+import { k as w, w as E, v as $, U as Ge, m as Mt, O as At } from "./colorToUniform-C6d4jSHV-PU3Dwd0-.js";
 class ze {
   /**
    * Initialize the plugin with scope of application instance
@@ -584,7 +584,7 @@ class ae extends J {
   }
 }
 const xe = "http://www.w3.org/2000/svg", _e = "http://www.w3.org/1999/xhtml";
-class Xe {
+class Ye {
   constructor() {
     this.svgRoot = document.createElementNS(xe, "svg"), this.foreignObject = document.createElementNS(xe, "foreignObject"), this.domElement = document.createElementNS(_e, "div"), this.styleElement = document.createElementNS(_e, "style"), this.image = new Image();
     const { foreignObject: e, svgRoot: t, styleElement: r, domElement: i } = this;
@@ -593,7 +593,7 @@ class Xe {
 }
 let be;
 function Ot(s, e, t, r) {
-  r = r || be || (be = new Xe());
+  r = r || be || (be = new Ye());
   const { domElement: i, styleElement: a, svgRoot: n } = r;
   i.innerHTML = `<style>${e.cssStyle};</style><div style='padding:0'>${s}</div>`, i.setAttribute("style", "transform-origin: top left; display: inline-block"), t && (a.textContent = t), document.body.appendChild(n);
   const o = i.getBoundingClientRect();
@@ -604,7 +604,7 @@ function Ot(s, e, t, r) {
     height: o.height - d
   };
 }
-class Ye {
+class Xe {
   constructor(e, t) {
     this.state = E.for2d(), this._graphicsBatchesHash = /* @__PURE__ */ Object.create(null), this._destroyRenderableBound = this.destroyRenderable.bind(this), this.renderer = e, this._adaptor = t, this._adaptor.init(), this.renderer.renderableGC.addManagedHash(this, "_graphicsBatchesHash");
   }
@@ -675,7 +675,7 @@ class Ye {
     this._graphicsBatchesHash = null;
   }
 }
-Ye.extension = {
+Xe.extension = {
   type: [
     p.WebGLPipes,
     p.WebGPUPipes,
@@ -995,7 +995,7 @@ function Lt(s) {
   }
   return e.join("_");
 }
-var Xt = `varying vec2 vUV;
+var Yt = `varying vec2 vUV;
 varying vec4 vColor;
 
 uniform sampler2D uTexture;
@@ -1003,7 +1003,7 @@ uniform sampler2D uTexture;
 void main(void){
     vec4 color = texture2D(uTexture, vUV) * vColor;
     gl_FragColor = color;
-}`, Yt = `attribute vec2 aVertex;
+}`, Xt = `attribute vec2 aVertex;
 attribute vec2 aUV;
 attribute vec4 aColor;
 
@@ -1096,8 +1096,8 @@ fn mainFragment(
 class jt extends ie {
   constructor() {
     const e = Rt.from({
-      vertex: Yt,
-      fragment: Xt
+      vertex: Xt,
+      fragment: Yt
     }), t = Ut.from({
       fragment: {
         source: Te,
@@ -1404,17 +1404,17 @@ const Nt = {
     )
   }
 };
-let X, Y;
+let Y, X;
 class Jt extends ie {
   constructor() {
-    X ?? (X = Me({
+    Y ?? (Y = Me({
       name: "tiling-sprite-shader",
       bits: [
         Mt,
         Nt,
         ke
       ]
-    })), Y ?? (Y = Ae({
+    })), X ?? (X = Ae({
       name: "tiling-sprite-shader",
       bits: [
         At,
@@ -1430,8 +1430,8 @@ class Jt extends ie {
       uSizeAnchor: { value: new Float32Array([100, 100, 0.5, 0.5]), type: "vec4<f32>" }
     });
     super({
-      glProgram: Y,
-      gpuProgram: X,
+      glProgram: X,
+      gpuProgram: Y,
       resources: {
         localUniforms: new F({
           uTransformMatrix: { value: new C(), type: "mat3x3<f32>" },
@@ -2062,7 +2062,7 @@ class oe {
     }, a;
   }
   async _buildTexturePromise(e, t, r) {
-    const i = _.get(Xe), a = ur(e, r), n = await hr(
+    const i = _.get(Ye), a = ur(e, r), n = await hr(
       a,
       r,
       ae.defaultTextStyle
@@ -2365,7 +2365,7 @@ ot.extension = {
 };
 v.add(ze);
 v.add(De);
-v.add(Ye);
+v.add(Xe);
 v.add(ct);
 v.add(Ne);
 v.add(Je);

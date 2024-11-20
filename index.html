@@ -36,12 +36,11 @@
     <script type="module">
       import renderGame from './src/index.ts';
 
-      renderGame();
+      renderGame({
+        assetsBasePath: '/assets',
+        creditsUrl: '/credits',
+      });
     </script>
   </head>
-  <body>
-    <a href="/games/couples-run/credits" style="display: none" id="credits-link"
-      >Credits</a
-    >
-  </body>
+  <body></body>
 </html>

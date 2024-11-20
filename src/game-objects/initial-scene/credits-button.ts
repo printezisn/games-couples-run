@@ -1,9 +1,11 @@
-import { CreditsButtonComponent } from '@printezisn/game-engine';
+import { LinkButtonComponent } from '@printezisn/game-engine';
+import config from '../../config';
 
-class CreditsButton extends CreditsButtonComponent {
+class CreditsButton extends LinkButtonComponent {
   constructor() {
     super({
       label: 'credits-button',
+      url: config.creditsUrl,
       resource: 'credits-button.png',
       hoverResource: 'credits-button-hover.png',
       disabledResource: 'credits-button.png',

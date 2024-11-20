@@ -17,10 +17,11 @@ import {
 } from '@printezisn/game-engine';
 
 interface RenderOptions {
-  assetsBasePath?: string;
+  creditsUrl: string;
+  assetsBasePath: string;
 }
 
-const renderGame = (options = {} as RenderOptions) => {
+const renderGame = (options: RenderOptions) => {
   const urlParams = new URLSearchParams(window.location.search ?? '');
 
   const destroyLoadingSceneBinding = addSignalListener(
@@ -34,14 +35,6 @@ const renderGame = (options = {} as RenderOptions) => {
       changeScene(
         urlParams.has('character') ? new GameScene() : new InitialScene(),
       );
-    },
-  );
-
-  const showCreditsBinding = addSignalListener(
-    engineConfig.signals.showCredits,
-    () => {
-      removeSignalListener(showCreditsBinding.name, showCreditsBinding.binding);
-      document.getElementById('credits-link')?.click();
     },
   );
 
@@ -59,9 +52,7 @@ const renderGame = (options = {} as RenderOptions) => {
   });
 
   engineConfig.gameName = 'couples-run';
-  if (options.assetsBasePath) {
-    engineConfig.assets.basePath = options.assetsBasePath;
-  }
+  engineConfig.assets.basePath = options.assetsBasePath;
   engineConfig.maxFPS = Number(urlParams.get('maxFPS')) || 60;
   engineConfig.debug = Boolean(urlParams.get('debug'));
   engineConfig.assets.manifest = assetsManifest;
@@ -73,6 +64,8 @@ const renderGame = (options = {} as RenderOptions) => {
       data: { family: 'PressStart2P' },
     },
   ];
+
+  config.creditsUrl = options.creditsUrl;
 
   gameState.selectedCharacter =
     urlParams.get('character') === 'boy' ? 'boy' : 'girl';

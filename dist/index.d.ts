@@ -1,8 +1,9 @@
-declare const renderGame: (options?: RenderOptions) => void;
+declare const renderGame: (options: RenderOptions) => void;
 export default renderGame;
 
 declare interface RenderOptions {
-    assetsBasePath?: string;
+    creditsUrl: string;
+    assetsBasePath: string;
 }
 
 export { }
