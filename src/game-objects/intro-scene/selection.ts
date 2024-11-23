@@ -10,7 +10,6 @@ class Selection extends ContainerComponent {
       width: 288,
       height: 159,
       anchor: { x: 0.5, y: 0 },
-      alpha: 0,
     });
 
     this.addComponent(new Girl());

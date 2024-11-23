@@ -1,4 +1,4 @@
-import { ap as f } from "./index-CXOVsyEC.js";
+import { as as f } from "./index-DSWGpMzM.js";
 export {
   f as default
 };

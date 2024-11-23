@@ -39,15 +39,7 @@ class Info extends ContainerComponent {
         this.addComponent(
           new SpriteComponent({
             label: `life-point-${i}`,
-            resource: {
-              fillColor: 0x2fff00,
-              rectangle: {
-                x: 0,
-                y: 0,
-                width: 10,
-                height: 20,
-              },
-            },
+            resource: 'life.png',
             position: { x: dist, y: 0 },
           }),
         ).width + 5;
@@ -57,15 +49,7 @@ class Info extends ContainerComponent {
       this.addComponent(
         new SpriteComponent({
           label: 'separator',
-          resource: {
-            fillColor: 0xcccccc,
-            rectangle: {
-              x: 0,
-              y: 0,
-              width: 3,
-              height: 20,
-            },
-          },
+          resource: 'separator.png',
           position: { x: dist + 10, y: 0 },
         }),
       ).width + 25;

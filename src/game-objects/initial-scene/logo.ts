@@ -1,4 +1,4 @@
-import { engineGameState, TextComponent } from '@printezisn/game-engine';
+import { TextComponent } from '@printezisn/game-engine';
 
 class Logo extends TextComponent {
   constructor() {
@@ -14,25 +14,25 @@ class Logo extends TextComponent {
       strokeWidth: 7,
       alpha: 0,
       horizontalAlignment: 'center',
+      landscape: {
+        fontSize: 128,
+      },
+      portrait: {
+        fontSize: 86,
+      },
+      animations: [
+        {
+          duration: 1,
+          from: { alpha: 0, y: 0 },
+          to: { alpha: 1, y: 50 },
+          ease: 'back.out(2)',
+        },
+      ],
     });
-
-    this.fontSize = this._desiredFontSize;
-    this.animate({
-      duration: 1,
-      from: { alpha: 0, y: 0 },
-      to: { alpha: 1, y: 50 },
-      ease: 'back.out(2)',
-    });
-  }
-
-  private get _desiredFontSize() {
-    return engineGameState.screen.orientation === 'landscape' ? 128 : 86;
   }
 
   protected _onOrientationChange() {
-    this.stopAnimations();
-    this.fontSize = this._desiredFontSize;
-    this.y = 50;
+    this.finishAnimations();
   }
 }
 

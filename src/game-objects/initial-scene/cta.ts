@@ -12,19 +12,16 @@ class CTA extends TextComponent {
       alpha: 0,
       horizontalAlignment: 'center',
       verticalAlignment: 'center',
-    });
-
-    this._enter();
-  }
-
-  private async _enter() {
-    this.animate({
-      from: { alpha: 0 },
-      to: { alpha: 1 },
-      duration: 0.5,
-      repeat: -1,
-      revert: true,
-      delay: 1.5,
+      animations: [
+        {
+          from: { alpha: 0 },
+          to: { alpha: 1 },
+          duration: 0.5,
+          repeat: -1,
+          revert: true,
+          delay: 1.5,
+        },
+      ],
     });
   }
 }

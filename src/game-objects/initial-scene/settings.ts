@@ -11,10 +11,8 @@ class Settings extends ContainerComponent {
       width: 230,
       height: 48,
       margin: { x: 0, y: -200 },
+      components: [new VolumeButton(), new CreditsButton()],
     });
-
-    this.addComponent(new VolumeButton());
-    this.addComponent(new CreditsButton());
   }
 }
 

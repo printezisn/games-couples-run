@@ -13,7 +13,7 @@ class MovingGirl extends SpriteComponent {
       resource: 'girl/run/girl-run-1.png',
       anchor: { x: 0, y: 1 },
       position: { x: 200, y: 0 },
-      scale: { x: 2, y: 2 },
+      scale: 2,
       verticalAlignment: 'bottom',
       margin: { x: 0, y: -55 },
     });

@@ -13,15 +13,16 @@ class CreditsButton extends LinkButtonComponent {
       cursor: 'pointer',
       position: { x: 155, y: 24 },
       alpha: 0,
-      scale: { x: 0.5, y: 0.5 },
-      anchor: { x: 0.5, y: 0.5 },
-    });
-
-    this.animate({
-      from: { alpha: 0, scaleX: 0.5, scaleY: 0.5 },
-      to: { alpha: 1, scaleX: 1, scaleY: 1 },
-      duration: 0.5,
-      delay: 1.5,
+      anchor: 0.5,
+      scale: 0,
+      animations: [
+        {
+          from: { alpha: 0, scaleX: 0, scaleY: 0 },
+          to: { alpha: 1, scaleX: 1, scaleY: 1 },
+          duration: 0.5,
+          delay: 1.7,
+        },
+      ],
     });
   }
 }

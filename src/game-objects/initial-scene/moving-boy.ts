@@ -13,7 +13,7 @@ class MovingBoy extends SpriteComponent {
       resource: 'boy/run/boy-run-1.png',
       anchor: { x: 0, y: 1 },
       position: { x: 130, y: 0 },
-      scale: { x: 2, y: 2 },
+      scale: 2,
       verticalAlignment: 'bottom',
       margin: { x: 0, y: -55 },
     });

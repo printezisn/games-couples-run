@@ -17,7 +17,6 @@ const config = {
   },
   lifePoints: 3,
   creditsUrl: '',
-  hasWatchedIntro: localStorage.getItem('couplesRun_watchedIntro') === 'true',
 };
 
 export default config;
