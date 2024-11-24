@@ -94,6 +94,7 @@ class FormScreen extends ContainerComponent {
         text: '',
         lineHeight: 40,
         interactive: true,
+        cursor: 'pointer',
         landscape: {
           position: { x: 100, y: 125 },
           text: 'By accepting you agree to the privacy policy\n(click/tap to read)',
@@ -103,7 +104,7 @@ class FormScreen extends ContainerComponent {
           text: 'By accepting you agree to\nthe privacy policy\n(click/tap to read)',
         },
         onClick: () => {
-          window.location.href = config.privacyPolicyUrl;
+          window.open(config.privacyPolicyUrl, '_blank');
         },
       }),
     );

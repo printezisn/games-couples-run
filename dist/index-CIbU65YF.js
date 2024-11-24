@@ -180,7 +180,7 @@ const Dr = (i) => {
   },
   test: () => !0,
   load: async () => {
-    await import("./browserAll-DI-IneS4-4l14o8P2.js");
+    await import("./browserAll-DZL04g9r-R_NQsPQ1.js");
   }
 }, $u = {
   extension: {
@@ -190,7 +190,7 @@ const Dr = (i) => {
   },
   test: () => typeof self < "u" && self.WorkerGlobalScope !== void 0,
   load: async () => {
-    await import("./webworkerAll-BHMliCxM-BWUnnlGt.js");
+    await import("./webworkerAll-Bpib2tIV-rGYr2zps.js");
   }
 };
 class vt {
@@ -6543,13 +6543,13 @@ async function Up(i) {
   for (let s = 0; s < t.length; s++) {
     const o = t[s];
     if (o === "webgpu" && await zp()) {
-      const { WebGPURenderer: a } = await import("./WebGPURenderer-iiN_H3vz-C9IGZTcV.js");
+      const { WebGPURenderer: a } = await import("./WebGPURenderer-CQJlTXcH-CLPMyTp_.js");
       e = a, n = { ...i, ...i.webgpu };
       break;
     } else if (o === "webgl" && Lp(
       i.failIfMajorPerformanceCaveat ?? Nl.defaultOptions.failIfMajorPerformanceCaveat
     )) {
-      const { WebGLRenderer: a } = await import("./WebGLRenderer-SSw25FvB-A3DhJMDz.js");
+      const { WebGLRenderer: a } = await import("./WebGLRenderer-bbiB0ysa-DV9vva8q.js");
       e = a, n = { ...i, ...i.webgl };
       break;
     } else if (o === "canvas")
@@ -19739,7 +19739,7 @@ class sy extends js {
     return super.props;
   }
   async _onClick() {
-    super._onClick(), window.location.href = this.props.url;
+    super._onClick(), window.open(this.props.url, "_blank");
   }
 }
 class zn extends jn {
@@ -22552,6 +22552,7 @@ class dx extends ke {
         text: "",
         lineHeight: 40,
         interactive: !0,
+        cursor: "pointer",
         landscape: {
           position: { x: 100, y: 125 },
           text: `By accepting you agree to the privacy policy
@@ -22564,7 +22565,7 @@ the privacy policy
 (click/tap to read)`
         },
         onClick: () => {
-          window.location.href = N.privacyPolicyUrl;
+          window.open(N.privacyPolicyUrl, "_blank");
         }
       })
     );

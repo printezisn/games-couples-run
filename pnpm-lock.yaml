@@ -24,8 +24,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       '@printezisn/game-engine':
-        specifier: git://github.com/printezisn/game-engine#v0.6.2
-        version: https://codeload.github.com/printezisn/game-engine/tar.gz/8c9fc22c83d13a02d8d6c9c7d456fddd7bfb4815
+        specifier: git://github.com/printezisn/game-engine#v0.6.3
+        version: https://codeload.github.com/printezisn/game-engine/tar.gz/33d2d888cd0407fc771d754ff0eed3b056123ce9
       audiosprite:
         specifier: 0.7.2
         version: 0.7.2
@@ -1235,12 +1235,12 @@ packages:
       }
     engines: { node: '>=14' }
 
-  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/8c9fc22c83d13a02d8d6c9c7d456fddd7bfb4815':
+  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/33d2d888cd0407fc771d754ff0eed3b056123ce9':
     resolution:
       {
-        tarball: https://codeload.github.com/printezisn/game-engine/tar.gz/8c9fc22c83d13a02d8d6c9c7d456fddd7bfb4815,
+        tarball: https://codeload.github.com/printezisn/game-engine/tar.gz/33d2d888cd0407fc771d754ff0eed3b056123ce9,
       }
-    version: 0.6.2
+    version: 0.6.3
     engines: { node: '>=20' }
     hasBin: true
 
@@ -5313,7 +5313,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/8c9fc22c83d13a02d8d6c9c7d456fddd7bfb4815':
+  '@printezisn/game-engine@https://codeload.github.com/printezisn/game-engine/tar.gz/33d2d888cd0407fc771d754ff0eed3b056123ce9':
     dependencies:
       husky: 9.1.6
 
