@@ -180,7 +180,7 @@ const Dr = (i) => {
   },
   test: () => !0,
   load: async () => {
-    await import("./browserAll-DZL04g9r-R_NQsPQ1.js");
+    await import("./browserAll-DI-IneS4-zsCK-UfZ.js");
   }
 }, $u = {
   extension: {
@@ -190,7 +190,7 @@ const Dr = (i) => {
   },
   test: () => typeof self < "u" && self.WorkerGlobalScope !== void 0,
   load: async () => {
-    await import("./webworkerAll-Bpib2tIV-rGYr2zps.js");
+    await import("./webworkerAll-BHMliCxM-B-OVdllW.js");
   }
 };
 class vt {
@@ -6543,13 +6543,13 @@ async function Up(i) {
   for (let s = 0; s < t.length; s++) {
     const o = t[s];
     if (o === "webgpu" && await zp()) {
-      const { WebGPURenderer: a } = await import("./WebGPURenderer-CQJlTXcH-CLPMyTp_.js");
+      const { WebGPURenderer: a } = await import("./WebGPURenderer-iiN_H3vz-M7avE7lU.js");
       e = a, n = { ...i, ...i.webgpu };
       break;
     } else if (o === "webgl" && Lp(
       i.failIfMajorPerformanceCaveat ?? Nl.defaultOptions.failIfMajorPerformanceCaveat
     )) {
-      const { WebGLRenderer: a } = await import("./WebGLRenderer-bbiB0ysa-DV9vva8q.js");
+      const { WebGLRenderer: a } = await import("./WebGLRenderer-SSw25FvB-BbrBW3Aw.js");
       e = a, n = { ...i, ...i.webgl };
       break;
     } else if (o === "canvas")
@@ -19739,7 +19739,7 @@ class sy extends js {
     return super.props;
   }
   async _onClick() {
-    super._onClick(), window.open(this.props.url, "_blank");
+    super._onClick(), window.location.href = this.props.url;
   }
 }
 class zn extends jn {
@@ -22565,7 +22565,7 @@ the privacy policy
 (click/tap to read)`
         },
         onClick: () => {
-          window.open(N.privacyPolicyUrl, "_blank");
+          window.location.href = N.privacyPolicyUrl;
         }
       })
     );

@@ -104,7 +104,7 @@ class FormScreen extends ContainerComponent {
           text: 'By accepting you agree to\nthe privacy policy\n(click/tap to read)',
         },
         onClick: () => {
-          window.open(config.privacyPolicyUrl, '_blank');
+          window.location.href = config.privacyPolicyUrl;
         },
       }),
     );
