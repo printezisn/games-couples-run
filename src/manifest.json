@@ -12,7 +12,7 @@
         },
         {
           "alias": ["audio/sounds.mp3"],
-          "src": ["audio/sounds-wkfo.mp3", "audio/sounds-r-WDeQ.ogg"],
+          "src": ["audio/sounds-wkfo.mp3", "audio/sounds-1Gi1Dw.ogg"],
           "data": {
             "tags": {}
           }
@@ -20,12 +20,12 @@
         {
           "alias": ["default"],
           "src": [
-            "default-YXsikQ.webp.json",
-            "default-ywsHNg.avif.json",
-            "default-qcXbTg@0.5x.avif.json",
-            "default-mXuFNw.png.json",
-            "default-aN1TZA@0.5x.png.json",
-            "default-5xZ_gw@0.5x.webp.json"
+            "default-zNXFTw@0.5x.png.json",
+            "default-UDdPmw@0.5x.avif.json",
+            "default-rwJjdQ.webp.json",
+            "default-OJa5rA@0.5x.webp.json",
+            "default-NYhshA.png.json",
+            "default-gtAn2g.avif.json"
           ],
           "data": {
             "tags": {

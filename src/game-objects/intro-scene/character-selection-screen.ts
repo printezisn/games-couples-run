@@ -1,9 +1,13 @@
 import {
   ContainerComponent,
+  engineConfig,
   engineGameState,
+  playSound,
   TextComponent,
 } from '@printezisn/game-engine';
 import Selection from './selection';
+import config from '../../config';
+import IntroScene from '../../scenes/intro-scene';
 
 const TEXT =
   'You can make both characters jump by clicking/tapping on the screen. ' +
@@ -58,6 +62,11 @@ class CharacterSelectionScreen extends ContainerComponent {
       to: { alpha: 1 },
       duration: 1,
     });
+
+    this._registerToSignal(
+      config.signals.chooseCharacter,
+      this._onCharacterSelection,
+    );
   }
 
   protected _onResize() {
@@ -68,6 +77,20 @@ class CharacterSelectionScreen extends ContainerComponent {
     text.wordWrapWidth = engineGameState.screen.width - 40;
     chooseCharacter.y = text.y + text.height + 40;
     selection.y = chooseCharacter.y + chooseCharacter.height + 40;
+  }
+
+  private async _onCharacterSelection() {
+    await Promise.all([
+      playSound(engineConfig.sounds.click),
+      this.animate({
+        from: { alpha: 1 },
+        to: { alpha: 0 },
+        duration: 1,
+        delay: 0.3,
+      }),
+    ]);
+
+    (this.parent as IntroScene).showFormScreen();
   }
 }
 

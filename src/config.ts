@@ -17,6 +17,7 @@ const config = {
   },
   lifePoints: 3,
   creditsUrl: '',
+  privacyPolicyUrl: '',
 };
 
 export default config;

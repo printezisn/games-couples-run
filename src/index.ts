@@ -18,6 +18,7 @@ import {
 
 interface RenderOptions {
   creditsUrl: string;
+  privacyPolicyUrl: string;
   assetsBasePath: string;
 }
 
@@ -66,6 +67,7 @@ const renderGame = (options: RenderOptions) => {
   ];
 
   config.creditsUrl = options.creditsUrl;
+  config.privacyPolicyUrl = options.privacyPolicyUrl;
 
   gameState.selectedCharacter =
     urlParams.get('character') === 'boy' ? 'boy' : 'girl';
