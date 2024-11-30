@@ -6,6 +6,7 @@ import {
   fireSignal,
   TextComponent,
 } from '@printezisn/game-engine';
+import { saveScore } from '../api/storage';
 
 class GameOverScene extends BaseScene {
   async init() {
@@ -36,6 +37,8 @@ class GameOverScene extends BaseScene {
         margin: { x: 0, y: 50 },
       }),
     );
+
+    saveScore(gameState.score);
 
     this.delay(2).then(() => fireSignal(config.signals.goToGame));
   }

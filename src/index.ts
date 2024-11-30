@@ -1,5 +1,4 @@
 import InitialScene from './scenes/initial-scene';
-
 import Lobster from '@fontsource/lobster/files/lobster-latin-400-normal.woff2';
 import PressStart2P from '@fontsource/press-start-2p/files/press-start-2p-latin-400-normal.woff2';
 import config from './config';
@@ -15,6 +14,7 @@ import {
   initGame,
   removeSignalListener,
 } from '@printezisn/game-engine';
+import { initStorage } from './api/storage';
 
 interface RenderOptions {
   creditsUrl: string;
@@ -73,6 +73,7 @@ const renderGame = (options: RenderOptions) => {
     urlParams.get('character') === 'boy' ? 'boy' : 'girl';
 
   initGame();
+  initStorage();
 };
 
 export default renderGame;

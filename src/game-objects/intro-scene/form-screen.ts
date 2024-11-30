@@ -8,10 +8,11 @@ import {
 } from '@printezisn/game-engine';
 import config from '../../config';
 import IntroScene from '../../scenes/intro-scene';
+import { getNickname, setNickname } from '../../api/storage';
 
 class FormScreen extends ContainerComponent {
   private _accepted = false;
-  private _nickname = localStorage.getItem('couplesRun_nickname') ?? '';
+  private _nickname = getNickname();
 
   constructor() {
     super({
@@ -141,7 +142,7 @@ class FormScreen extends ContainerComponent {
         cursor: 'pointer',
         onClick: async () => {
           playButton.interactive = false;
-          localStorage.setItem('couplesRun_nickname', this._nickname);
+          setNickname(this._nickname);
           (this.parent as IntroScene).goToGame();
         },
       }),
