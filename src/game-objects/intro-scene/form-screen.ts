@@ -2,6 +2,7 @@ import {
   ButtonComponent,
   ContainerComponent,
   InputComponent,
+  LinkButtonComponent,
   SpriteComponent,
   TextComponent,
 } from '@printezisn/game-engine';
@@ -36,24 +37,24 @@ class FormScreen extends ContainerComponent {
       }),
     );
 
-    const nicknameInput = this.addComponent(
+    this.addComponent(
       new InputComponent({
         background: 'input.png',
         fontFamily: 'Arial, sans-serif',
         fontSize: 24,
         label: 'nickname',
         textColor: 0x000000,
-        align: 'center',
         text: this._nickname,
         maxLength: 10,
+        padding: 10,
         landscape: {
           position: { x: 520, y: 20 },
         },
         portrait: {
           position: { x: 20, y: 80 },
         },
-        onChange: () => {
-          this._nickname = nicknameInput.text;
+        onChange: (text) => {
+          this._nickname = text;
           playButton.enabled =
             Boolean(this._nickname?.trim()) && this._accepted;
           playButton.interactive = playButton.enabled;
@@ -93,36 +94,51 @@ class FormScreen extends ContainerComponent {
         textColor: 0xffcc00,
         text: '',
         lineHeight: 40,
-        interactive: true,
-        cursor: 'pointer',
         landscape: {
           position: { x: 100, y: 125 },
-          text: 'By accepting you agree to the privacy policy\n(click/tap to read)',
+          text: 'By accepting you agree to the privacy policy',
         },
         portrait: {
           position: { x: 100, y: 185 },
-          text: 'By accepting you agree to\nthe privacy policy\n(click/tap to read)',
-        },
-        onClick: () => {
-          window.location.href = config.privacyPolicyUrl;
+          text: 'By accepting you agree to\nthe privacy policy',
         },
       }),
     );
 
-    const playButton = this.addComponent(
-      new ButtonComponent({
-        label: 'play-button',
-        resource: 'play-button.png',
-        hoverResource: 'play-button-hover.png',
-        disabledResource: 'play-button-disabled.png',
-        horizontalAlignment: 'center',
-        anchor: { x: 0.5, y: 0 },
+    const buttons = this.addComponent(
+      new ContainerComponent({
+        label: 'buttons',
         landscape: {
           y: 250,
         },
         portrait: {
           y: 340,
         },
+        horizontalAlignment: 'center',
+        width: 650,
+      }),
+    );
+
+    buttons.addComponent(
+      new LinkButtonComponent({
+        label: 'policy-button',
+        url: config.privacyPolicyUrl,
+        resource: 'policy-button.png',
+        hoverResource: 'policy-button-hover.png',
+        disabledResource: 'policy-button.png',
+        interactive: true,
+        cursor: 'pointer',
+      }),
+    );
+
+    const playButton = buttons.addComponent(
+      new ButtonComponent({
+        label: 'play-button',
+        resource: 'play-button.png',
+        hoverResource: 'play-button-hover.png',
+        disabledResource: 'play-button-disabled.png',
+        position: { x: 350, y: 0 },
+        cursor: 'pointer',
         onClick: async () => {
           playButton.interactive = false;
           localStorage.setItem('couplesRun_nickname', this._nickname);
