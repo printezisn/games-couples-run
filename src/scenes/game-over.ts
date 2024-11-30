@@ -66,11 +66,14 @@ class GameOverScene extends BaseScene {
   }
 
   private _showLeaderboard() {
+    const leaderboardWidth = 549;
     const leaderboard = this.addComponent(
       new ContainerComponent({
         label: 'leaderboard',
+        width: leaderboardWidth,
         height: 549,
         verticalAlignment: 'center',
+        horizontalAlignment: 'center',
       }),
     );
     let y = 0;
@@ -84,7 +87,7 @@ class GameOverScene extends BaseScene {
           fontSize: 48,
           textColor: engineConfig.loadingScene.textColor,
           anchor: { x: 0.5, y: 0 },
-          horizontalAlignment: 'center',
+          position: { x: leaderboardWidth / 2, y: 0 },
           alpha: 0,
           animations: [
             {
@@ -101,20 +104,37 @@ class GameOverScene extends BaseScene {
         player.id === getPlayerId()
           ? 0xffcc00
           : engineConfig.loadingScene.textColor;
-      const text =
-        `${i + 1}. ${player.nickname}`.padEnd(50, ' ') + player.score;
+
+      leaderboard.addComponent(
+        new TextComponent({
+          label: `player-${i}`,
+          text: `${i + 1}. ${player.nickname}`,
+          fontFamily: engineConfig.loadingScene.fontFamily,
+          fontSize: 24,
+          textColor,
+          position: { x: 0, y },
+          alpha: 0,
+          animations: [
+            {
+              from: { alpha: 0 },
+              to: { alpha: 1 },
+              duration: 0.5,
+              delay: 0.5 * (i + 1),
+            },
+          ],
+        }),
+      );
 
       y +=
         leaderboard.addComponent(
           new TextComponent({
-            label: `player-${i}`,
-            text,
+            label: `score-${i}`,
+            text: player.score.toString(),
             fontFamily: engineConfig.loadingScene.fontFamily,
             fontSize: 24,
             textColor,
-            anchor: { x: 0.5, y: 0 },
-            horizontalAlignment: 'center',
-            position: { x: 0, y },
+            anchor: { x: 1, y: 0 },
+            position: { x: leaderboardWidth, y },
             alpha: 0,
             animations: [
               {
