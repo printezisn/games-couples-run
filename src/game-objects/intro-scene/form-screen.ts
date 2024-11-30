@@ -47,7 +47,7 @@ class FormScreen extends ContainerComponent {
         textColor: 0x000000,
         text: this._nickname,
         maxLength: 10,
-        padding: 10,
+        padding: 15,
         landscape: {
           position: { x: 520, y: 20 },
         },
