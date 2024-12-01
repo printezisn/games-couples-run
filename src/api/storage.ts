@@ -11,19 +11,11 @@ import {
   query,
   setDoc,
 } from 'firebase/firestore';
+import config from '../config';
 
 const NICKNAME_STORAGE = 'couplesRun_nickname';
 const PLAYER_ID_STORAGE = 'couplesRun_playerId';
 const HIGH_SCORE_STORAGE = 'couplesRun_highScore';
-
-const FIREBASE_CONFIG = {
-  apiKey: 'AIzaSyBPCVBnq-hw94nmIEYtfMwT5PiCLvNDWQs',
-  authDomain: 'couples-run.firebaseapp.com',
-  projectId: 'couples-run',
-  storageBucket: 'couples-run.firebasestorage.app',
-  messagingSenderId: '817663008433',
-  appId: '1:817663008433:web:6271fc6c5a91e2b95fcc90',
-};
 
 let _firestoreDb!: Firestore;
 
@@ -52,7 +44,14 @@ export const saveScore = async (score: number) => {
 };
 
 export const initStorage = () => {
-  const app = initializeApp(FIREBASE_CONFIG);
+  const app = initializeApp({
+    apiKey: config.fireBaseApiKey,
+    authDomain: config.fireBaseAuthDomain,
+    projectId: config.fireBaseProjectId,
+    storageBucket: config.fireBaseStorageBucket,
+    messagingSenderId: config.fireBaseMessagingSenderId,
+    appId: config.fireBaseAppId,
+  });
   _firestoreDb = getFirestore(app);
 
   setInterval(() => uploadHighScore(), 5000);

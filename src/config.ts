@@ -18,6 +18,12 @@ const config = {
   lifePoints: 3,
   creditsUrl: '',
   privacyPolicyUrl: '',
+  fireBaseApiKey: '',
+  fireBaseAuthDomain: '',
+  fireBaseProjectId: '',
+  fireBaseStorageBucket: '',
+  fireBaseMessagingSenderId: '',
+  fireBaseAppId: '',
 };
 
 export default config;

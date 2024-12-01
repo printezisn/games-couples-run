@@ -12,6 +12,7 @@ Join forces with your partner in the ultimate couples' platformer game! Collect 
 1. Install **pnpm** (e.g. with `npm i -g pnpm`).
 1. Download the node packages with `pnpm i`.
 1. Install **ffmpeg** to convert audio files.
+1. Copy the contents of `.env.template` into `.env` and set the environment variables for Firebase.
 
 ## Stack
 
@@ -22,6 +23,7 @@ Join forces with your partner in the ultimate couples' platformer game! Collect 
 1. [PixiJS Assetpack](https://pixijs.io/assetpack/) for packing and optimizing assets.
 1. [MatterJS](https://brm.io/matter-js/) for game physics.
 1. [Audiosprite](https://github.com/tonistiigi/audiosprite) to combine audio files.
+1. [Firebase](https://firebase.google.com/) to store the leaderboard.
 
 ## Scripts
 

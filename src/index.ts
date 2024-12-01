@@ -20,6 +20,12 @@ interface RenderOptions {
   creditsUrl: string;
   privacyPolicyUrl: string;
   assetsBasePath: string;
+  fireBaseApiKey: string;
+  fireBaseAuthDomain: string;
+  fireBaseProjectId: string;
+  fireBaseStorageBucket: string;
+  fireBaseMessagingSenderId: string;
+  fireBaseAppId: string;
 }
 
 const renderGame = (options: RenderOptions) => {
@@ -68,6 +74,12 @@ const renderGame = (options: RenderOptions) => {
 
   config.creditsUrl = options.creditsUrl;
   config.privacyPolicyUrl = options.privacyPolicyUrl;
+  config.fireBaseApiKey = options.fireBaseApiKey;
+  config.fireBaseAppId = options.fireBaseAppId;
+  config.fireBaseAuthDomain = options.fireBaseAuthDomain;
+  config.fireBaseMessagingSenderId = options.fireBaseMessagingSenderId;
+  config.fireBaseProjectId = options.fireBaseProjectId;
+  config.fireBaseStorageBucket = options.fireBaseStorageBucket;
 
   gameState.selectedCharacter =
     urlParams.get('character') === 'boy' ? 'boy' : 'girl';
