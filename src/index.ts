@@ -1,3 +1,4 @@
+import './styles.css';
 import InitialScene from './scenes/initial-scene';
 import Lobster from '@fontsource/lobster/files/lobster-latin-400-normal.woff2';
 import PressStart2P from '@fontsource/press-start-2p/files/press-start-2p-latin-400-normal.woff2';

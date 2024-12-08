@@ -1,7 +1,7 @@
 {
   "name": "@printezisn/games-couples-run",
   "type": "module",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "author": {
     "name": "Nikos Printezis",
     "url": "https://printezisn.github.io/"
@@ -22,6 +22,10 @@
       "import": "./dist/games-couples-run.js",
       "require": "./dist/games-couples-run.umd.cjs",
       "types": "./dist/index.d.ts"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "engines": {
