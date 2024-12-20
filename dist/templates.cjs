@@ -1,0 +1,320 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n="",e=`<div class="page-content text-center">
+  <article class="post">
+    <h3 class="title">Created by</h3>
+    <p>Nikos Printezis</p>
+  </article>
+  <article class="post">
+    <h3 class="title">Night city background by</h3>
+    <p>CraftPix.net 2D Game Assets</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/night-city-pixel-art-background"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/night-city-pixel-art-background
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Pixel tileset by</h3>
+    <p>software_atelier</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/city-pixel-tileset"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/city-pixel-tileset
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Boy and girl character by</h3>
+    <p>Mobile Game Graphics</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/pixelantasy"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/pixelantasy
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Main game loop music (Metropolis Rush) by</h3>
+    <p>Johan Brodd</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/metropolis-rush"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/metropolis-rush
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Introduction loop music (Urban Ambient Theme) by</h3>
+    <p>Ted Kerr 2018</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/urban-ambient-theme"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/urban-ambient-theme
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Click sound by</h3>
+    <p>qubodup</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/click"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/click
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Game over sound by</h3>
+    <p>Oiboo</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/game-over-bad-chest-sfx"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/game-over-bad-chest-sfx
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Drink icon by</h3>
+    <p>Aswino</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/drink"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/drink
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Coin sound (when getting a drink) by</h3>
+    <p>Fupi</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/plingy-coin"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/plingy-coin
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Zombie image by</h3>
+    <p>Irina Mir (irmirx)</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/zombie-animations"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/zombie-animations
+      </a>
+    </p>
+  </article>
+  <article class="post">
+    <h3 class="title">Player hit sound by</h3>
+    <p>GreyFrogGames</p>
+    <p>
+      <a
+        href="https://opengameart.org/content/player-hit-damage"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://opengameart.org/content/player-hit-damage
+      </a>
+    </p>
+  </article>
+</div>
+`,t=`---
+import BlogLayout from '../../../layouts/blog-layout.astro';
+
+const title = 'Privacy Policy | Couples Run';
+const description = 'Privacy policy for the Couples Run game';
+---
+
+<BlogLayout
+  title="{title}"
+  description="{description}"
+  path="/games/couples-run/privacy-policy/"
+>
+  <div class="page-content">
+    <article class="post">
+      <header>
+        <h2 class="big-title">Privacy Policy for Couples Run</h2>
+      </header>
+      <div class="content">
+        <p><strong>Effective Date</strong>: 2024-11-24</p>
+        <p>
+          Couples Run (“we,” “us,” or “our”) values your privacy and is
+          committed to protecting the personal information you share with us.
+          This Privacy Policy explains how we collect, use, store, and protect
+          your information when you play our game. By using our game, you agree
+          to the collection and use of information in accordance with this
+          policy.
+        </p>
+        <h3>1. Information We Collect</h3>
+        <p>When you play Couples Run, we collect the following information:</p>
+        <ul>
+          <li>
+            Nickname: Your nickname, which is used to identify you in the game
+            and on the leaderboard.
+          </li>
+          <li>
+            Game Score: Your score in the game, which is stored to display your
+            rank on the leaderboard.
+          </li>
+        </ul>
+        <p>
+          Both your nickname and score are stored in our Firebase Firestore
+          database.
+        </p>
+        <h3>2. How We Use Your Information</h3>
+        <p>The information we collect is used for the following purposes:</p>
+        <ul>
+          <li>
+            To identify you in the game and display your nickname on the
+            leaderboard.
+          </li>
+          <li>
+            To store and display your game score on the leaderboard, allowing
+            you to compare your performance with other players.
+          </li>
+        </ul>
+        <p>
+          We do not use this information for any other purposes, such as for
+          advertising or data analysis.
+        </p>
+        <h3>3. Data Storage and Security</h3>
+        <p>
+          We store your information on Firebase Firestore, a secure cloud
+          service provided by Google. We take reasonable steps to protect your
+          information from unauthorized access, alteration, or disclosure.
+          However, please note that no method of internet transmission is 100%
+          secure, and while we strive to protect your data, we cannot guarantee
+          its absolute security.
+        </p>
+        <h3>4. Firebase Firestore Data Storage</h3>
+        <p>
+          In addition to the data you provide (nickname and score), Firebase
+          Firestore may automatically store certain metadata, such as:
+        </p>
+        <ul>
+          <li>
+            Timestamps: Information about when your data (nickname and score)
+            was created or last updated.
+          </li>
+          <li>
+            Transaction Metadata: Basic metadata related to the storage and
+            retrieval of your data, such as document IDs or records of database
+            transactions.
+          </li>
+        </ul>
+        <p>
+          While Firebase Firestore does not collect personal information like
+          your IP address or device details as part of our service, Google may
+          collect such data as part of its network infrastructure for security,
+          performance, and monitoring purposes. This data is used to maintain
+          the service’s stability and security, and it is not shared with us.
+          Firestore does not automatically collect or store sensitive personal
+          information beyond the data you provide (nickname and score).
+        </p>
+        <h3>5. Data Sharing</h3>
+        <p>
+          We do not share your personal information (nickname or game score)
+          with third parties, except in the following cases:
+        </p>
+        <ul>
+          <li>
+            Service Providers: We may share your information with trusted
+            third-party service providers, such as Firebase, who help us store
+            and manage the data.
+          </li>
+          <li>
+            Legal Compliance: We may disclose your information if required by
+            law, to comply with legal obligations, or to protect the rights,
+            property, or safety of Couples Run, its users, or others.
+          </li>
+        </ul>
+        <h3>6. Children’s Privacy</h3>
+        <p>
+          Our game is accessible to children under 13 years of age. We are
+          committed to complying with applicable laws protecting children’s
+          privacy, including the Children’s Online Privacy Protection Act
+          (COPPA) in the United States.
+        </p>
+        <ul>
+          <li>
+            What We Collect from Children: We collect the player’s nickname and
+            score to allow participation in the game’s leaderboard. We do not
+            collect additional personal information from children.
+          </li>
+          <li>
+            Parental Consent: If you are under 13 years of age, we recommend
+            that you obtain parental consent before playing the game or
+            submitting your information.
+          </li>
+        </ul>
+        <p>
+          If you are a parent or guardian and believe your child has provided
+          personal information to us, you can contact us at printezisn@gmail.com
+          to request that we delete the information.
+        </p>
+        <h3>7. Your Rights</h3>
+        <p>
+          You have the following rights regarding your personal information:
+        </p>
+        <ul>
+          <li>
+            Access: You can request to view the information we have collected
+            about you.
+          </li>
+          <li>
+            Update: You can modify or update your nickname or score by
+            contacting us at printezisn@gmail.com
+          </li>
+          <li>
+            Deletion: You can request to have your information deleted from our
+            servers. If you do so, your leaderboard ranking and associated score
+            will also be removed.
+          </li>
+        </ul>
+        <h3>8. Changes to This Privacy Policy</h3>
+        <p>
+          We may update this Privacy Policy from time to time. If we make
+          significant changes, we will notify you within the game or by other
+          appropriate means. We encourage you to review this policy periodically
+          for any updates.
+        </p>
+        <h3>9. Contact Us</h3>
+        <p>
+          If you have any questions or concerns about this Privacy Policy or how
+          we handle your personal information, please contact us at
+          printezisn@gmail.com.
+        </p>
+      </div>
+    </article>
+  </div>
+</BlogLayout>
+`;exports.CreditsHtml=e;exports.MainBodyHtml=n;exports.PrivacyPolicyHtml=t;
