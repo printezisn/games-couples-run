@@ -1,1 +1,1 @@
-"use strict";const e=require("./index-BsF6_GBc.cjs");module.exports=e.renderGame;
+"use strict";const e=require("./index-BJwiKbxy.cjs");module.exports=e.renderGame;

@@ -52,6 +52,7 @@ const renderGame = (options: RenderOptions) => {
   });
 
   addSignalListener(config.signals.goToGame, () => {
+    initStorage();
     changeScene(new GameScene());
   });
 
@@ -86,7 +87,6 @@ const renderGame = (options: RenderOptions) => {
     urlParams.get('character') === 'boy' ? 'boy' : 'girl';
 
   initGame();
-  initStorage();
 };
 
 export default renderGame;

@@ -180,7 +180,7 @@ const Mh = (n) => {
   },
   test: () => !0,
   load: async () => {
-    await import("./browserAll-BpoGT0PN-CIybd9Xa.js");
+    await import("./browserAll-BpoGT0PN-CQH6wEOV.js");
   }
 }, _v = {
   extension: {
@@ -190,7 +190,7 @@ const Mh = (n) => {
   },
   test: () => typeof self < "u" && self.WorkerGlobalScope !== void 0,
   load: async () => {
-    await import("./webworkerAll-DQbc7pxG-DsAFnitY.js");
+    await import("./webworkerAll-DQbc7pxG-BKs0TjQA.js");
   }
 };
 class Kt {
@@ -6481,13 +6481,13 @@ async function eb(n) {
   for (let s = 0; s < t.length; s++) {
     const o = t[s];
     if (o === "webgpu" && await tb()) {
-      const { WebGPURenderer: a } = await import("./WebGPURenderer-CFR6AS1D-BrhtQcio.js");
+      const { WebGPURenderer: a } = await import("./WebGPURenderer-CFR6AS1D-DDW9BpWv.js");
       e = a, i = { ...n, ...n.webgpu };
       break;
     } else if (o === "webgl" && $x(
       n.failIfMajorPerformanceCaveat ?? dg.defaultOptions.failIfMajorPerformanceCaveat
     )) {
-      const { WebGLRenderer: a } = await import("./WebGLRenderer-Di-BqfWs-C-HoB8T2.js");
+      const { WebGLRenderer: a } = await import("./WebGLRenderer-Di-BqfWs-Cwl7Y4IX.js");
       e = a, i = { ...n, ...n.webgl };
       break;
     } else if (o === "canvas")
@@ -36842,7 +36842,7 @@ const VR = (n) => {
     ba(i.name, i.binding), Rs(new fR());
   });
   Ss(tt.signals.goToGame, () => {
-    Rs(new bm());
+    uR(), Rs(new bm());
   }), Ss(tt.signals.gameOver, () => {
     Rs(new ER());
   }), W.gameName = "couples-run", W.assets.basePath = n.assetsBasePath, W.maxFPS = Number(t.get("maxFPS")) || 60, W.debug = !!t.get("debug"), W.assets.manifest = SR, W.assets.extra = [
@@ -36852,7 +36852,7 @@ const VR = (n) => {
       src: nS,
       data: { family: "PressStart2P" }
     }
-  ], tt.creditsUrl = n.creditsUrl, tt.privacyPolicyUrl = n.privacyPolicyUrl, tt.fireBaseApiKey = n.fireBaseApiKey, tt.fireBaseAppId = n.fireBaseAppId, tt.fireBaseAuthDomain = n.fireBaseAuthDomain, tt.fireBaseMessagingSenderId = n.fireBaseMessagingSenderId, tt.fireBaseProjectId = n.fireBaseProjectId, tt.fireBaseStorageBucket = n.fireBaseStorageBucket, pt.selectedCharacter = t.get("character") === "boy" ? "boy" : "girl", UT(), uR();
+  ], tt.creditsUrl = n.creditsUrl, tt.privacyPolicyUrl = n.privacyPolicyUrl, tt.fireBaseApiKey = n.fireBaseApiKey, tt.fireBaseAppId = n.fireBaseAppId, tt.fireBaseAuthDomain = n.fireBaseAuthDomain, tt.fireBaseMessagingSenderId = n.fireBaseMessagingSenderId, tt.fireBaseProjectId = n.fireBaseProjectId, tt.fireBaseStorageBucket = n.fireBaseStorageBucket, pt.selectedCharacter = t.get("character") === "boy" ? "boy" : "girl", UT();
 };
 export {
   mt as $,
