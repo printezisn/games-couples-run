@@ -1,7 +1,7 @@
 {
   "name": "@printezisn/games-couples-run",
   "type": "module",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "author": {
     "name": "Nikos Printezis",
     "url": "https://printezisn.github.io/"
@@ -43,6 +43,11 @@
     "lint:fix": "tsc && eslint ./src --fix",
     "prettier:format": "prettier --write .",
     "prepare": "husky"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@printezisn/game-engine"
+    ]
   },
   "dependencies": {
     "husky": "9.1.6"
